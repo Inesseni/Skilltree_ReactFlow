@@ -3,7 +3,7 @@
 .react-flow__input,
 .react-flow__output,
 .react-flow__edge {
-  cursor: default !important;
+  cursor: default;
 }
 
 .react-flow__edge-path,
@@ -15,7 +15,6 @@
 .react-flow__pane {
   overflow: hidden;
   min-height: 100vh;
-  cursor: default;
 }
 
 .react-flow__node {
@@ -51,12 +50,12 @@
   width: 120px;
   font-size: medium;
   opacity: 1;
-  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .0);
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .2);
 }
 
 .react-flow__node.first:hover {
-  background-color: rgba(85, 85, 85, 1);
-  color: white;
+  background-color: white;
+  color:rgba(85, 85, 85, 1);
   box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .0);
 }
 
@@ -80,4 +79,5 @@
 
 .react-flow__handle {
   opacity: 0;
+  cursor: default !important;
 }
