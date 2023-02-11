@@ -1,6 +1,6 @@
 import ReactFlow from 'reactflow';
 import styled from 'styled-components';
-import React from 'react';
+import React,{MouseEvent} from 'react';
 
 import 'reactflow/dist/style.css';
 import './App.css';
@@ -38,11 +38,11 @@ const nodes = [
   { id: '18', data: { label: 'JavaScript', key: 'node18' }, position: {  x: mycenter + myXOffset*4, y: myYOffset*20.5  }},
   { id: '19', data: { label: 'Front End', key: 'node19' }, position: {  x: mycenter + myXOffset*2, y: myYOffset*22.5  }},
 
-  { id: '20', type: 'output', data: { label: 'Three.js', key: 'node20' }, position: {  x: mycenter - myXOffset*0, y: myYOffset*25  }},
+  { id: '20',className: "loading", type: 'output', data: { label: 'Three.js', key: 'node20' }, position: {  x: mycenter - myXOffset*0, y: myYOffset*25  }},
   { id: '21', data: { label: 'HTML / CSS', key: 'node21' }, position: {  x: mycenter + myXOffset*2, y: myYOffset*27.5  }},
-  { id: '22',type: 'output', data: { label: 'React (+Native)', key: 'node22' }, position: {  x: mycenter + myXOffset*2, y: myYOffset*29  }},
+  { id: '22',className: "loading", type: 'output', data: { label: 'React (+Native)', key: 'node22' }, position: {  x: mycenter + myXOffset*2, y: myYOffset*29  }},
 
-  { id: '23', data: { label: 'WebXR', key: 'node23' }, position: {  x: mycenter - myXOffset*0, y: myYOffset*19.9 }},
+  { id: '23',className: "loading", data: { label: 'WebXR', key: 'node23' }, position: {  x: mycenter - myXOffset*0, y: myYOffset*19.9 }},
   { id: '24', type: 'output', data: { label: 'GitHub', key: 'node24' }, position: {  x: mycenter + myXOffset*4, y: myYOffset*26.3  }},
   { id: '25', type: 'output', data: { label: 'Figma', key: 'node25' }, position: {  x: mycenter + myXOffset*5.5, y: myYOffset*25  }},
 
@@ -55,8 +55,8 @@ const nodes = [
   { id: '31', data: { label: 'Youtube', key: 'node31' }, position: { x: mycenter - myXOffset*4.5, y: myYOffset*15.5 }},
   { id: '32', data: { label: 'Premiere / After effects', key: 'node32' }, position: { x: mycenter - myXOffset*7, y: myYOffset*14}},
 
-  { id: '33',type: 'output', data: { label: 'teaching', key: 'node33' }, position: { x: mycenter - myXOffset*4.5, y: myYOffset*19}},
-  { id: '34',type: 'output', data: { label: 'video editing', key: 'node34' }, position: { x: mycenter - myXOffset*7, y: myYOffset*17.5}},
+  { id: '33',className: "loading", type: 'output', data: { label: 'teaching', key: 'node33' }, position: { x: mycenter - myXOffset*4.5, y: myYOffset*19}},
+  { id: '34',className: "loading", type: 'output', data: { label: 'video editing', key: 'node34' }, position: { x: mycenter - myXOffset*7, y: myYOffset*17.5}},
 
 ];
 
@@ -157,13 +157,17 @@ const TreeWrapper = styled.div`
 
 
 
+const entered = (event) => {
+  console.log(event.getNode);
+};
+
 
 function App() {
 
   return (
     <MyStyledDiv>
       <TreeWrapper>
-        <ReactFlow nodes={nodes} edges={edges} panOnDrag={false} panOnScroll={false} preventScrolling={false}/>
+        <ReactFlow nodes={nodes} edges={edges} panOnDrag={false} panOnScroll={false} preventScrolling={false} onNodeMouseEnter={entered}/>
       </TreeWrapper>
     </MyStyledDiv>
   );
@@ -174,41 +178,9 @@ export default App;
 
 /**
  * 
- * 
- * const NodeRenderer = ({ node, onClickNode }) => {
-  if (!node) {
-    console.log("im hgere");
-    return null;
-  }
-
-
-
-  return (
-    <g onClick={() => onClickNode(node)}>
-      <circle cx={node.position.x} cy={node.position.y} r={30} />
-      <text x={node.position.x} y={node.position.y} textAnchor="middle" fill="red">
-
-        {node.label}
-        {console.log(node.label)}
-      </text>
-    </g>
-  );
-};
-
-
-
-const nodeTypes = {
-  node1: {
-    type: 'rect',
-    style: {
-      fill: 'red',
-      stroke: '#aaa',
-      strokeWidth: 1,
-      rx: 10,
-      width: 1200,
-      height: 60
-    }
-  }
-};
-
+ *TODO:
+ - can i scale the node when hover over it?
+ - maybe also show a pop up when hovering?
+ - box shadow?
+ - hintergrund bild
  */

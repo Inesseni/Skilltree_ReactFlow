@@ -45,12 +45,37 @@
   transition: all .2s ease-in-out;
 }
 
+.react-flow__node.loading {
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0.2) 10px, transparent 8px);
+  background-size: 30px 30px;
+  animation: animate-stripes 3s linear infinite;
+
+  cursor: default;
+  width: 80px;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+}
+
+@keyframes animate-stripes {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 60px 0;
+  }
+}
+
 .react-flow__node:hover {
   transform: scale(3);
   background: rgb(255, 255, 255);
   color: rgb(49, 49, 49);
 }
 
+
 .react-flow__handle {
-  display: none;
+  opacity: 0;
 }
