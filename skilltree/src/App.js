@@ -1,6 +1,6 @@
 import ReactFlow from 'reactflow';
 import styled from 'styled-components';
-import React, {useRef, useState, createRef} from 'react';
+import React from 'react';
 
 import 'reactflow/dist/style.css';
 import './App.css';
@@ -157,16 +157,13 @@ const TreeWrapper = styled.div`
 
 
 
-const entered = (node) => {
-  console.log("hovered");
-};
 
 function App() {
 
   return (
     <MyStyledDiv>
       <TreeWrapper>
-        <ReactFlow nodes={nodes} edges={edges} panOnDrag={false} panOnScroll={false} preventScrolling={false} onNodeMouseEnter={entered}/>
+        <ReactFlow nodes={nodes} edges={edges} panOnDrag={false} panOnScroll={false} preventScrolling={false}/>
       </TreeWrapper>
     </MyStyledDiv>
   );
