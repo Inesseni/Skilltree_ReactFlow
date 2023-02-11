@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.react-flow__input,
+.react-flow__output,
+.react-flow__edge {
+  cursor: default !important;
+}
+
+.react-flow {
+  background: rgb(53, 53, 53);
+}
+
+.react-flow__pane {
+  min-height: 100vh;
+  overflow: scroll;
+  cursor: default;
+}
+
+.react-flow__node {
+  background: rgb(85, 85, 85);
+  color: white;
+  cursor: default;
+  width: 80px;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  transition: all .2s ease-in-out;
+}
+
+.react-flow__node:hover {
+  transform: scale(3);
+  background: rgb(255, 255, 255);
+  color: rgb(49, 49, 49);
+}
+
+.react-flow__handle {
+  display: none;
+}
