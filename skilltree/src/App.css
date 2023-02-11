@@ -1,21 +1,4 @@
-.App {
-  text-align: center;
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
+*,
 
 .react-flow__input,
 .react-flow__output,
@@ -23,17 +6,20 @@
   cursor: default !important;
 }
 
-.react-flow {
-  background: rgb(53, 53, 53);
+.react-flow__edge-path,
+.react-flow__connection-path {
+  stroke-width: 2;
+  stroke: rgba(0, 0, 0, 0.403);
 }
 
 .react-flow__pane {
+  overflow: hidden;
   min-height: 100vh;
-  overflow: scroll;
   cursor: default;
 }
 
 .react-flow__node {
+  border: 0px solid black;
   background: rgb(85, 85, 85);
   color: white;
   cursor: default;
@@ -43,21 +29,37 @@
   padding-bottom: 10px;
   border-radius: 20px;
   transition: all .2s ease-in-out;
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .2);
+
+}
+
+.react-flow__node.selected {
+  background: rgb(255, 255, 255);
+  color: rgb(85, 85, 85);
 }
 
 .react-flow__node.loading {
-  background: linear-gradient(to right,
-      rgba(255, 255, 255, 0.2) 10px, transparent 8px);
-  background-size: 30px 30px;
+  background: linear-gradient(to left,
+      rgba(85, 85, 85, 1) 0px, rgba(85, 85, 85, 0.5) 50px);
+  background-size: 100px 30px;
   animation: animate-stripes 3s linear infinite;
-
-  cursor: default;
-  width: 80px;
-  padding: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 20px;
 }
+
+.react-flow__node.first {
+  border-radius: 40px;
+  padding: 20px;
+  width: 120px;
+  font-size: medium;
+  opacity: 1;
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .0);
+}
+
+.react-flow__node.first:hover {
+  background-color: rgba(85, 85, 85, 1);
+  color: white;
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .0);
+}
+
 
 @keyframes animate-stripes {
   from {
@@ -65,7 +67,7 @@
   }
 
   to {
-    background-position: 60px 0;
+    background-position: 100px 0;
   }
 }
 

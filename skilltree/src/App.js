@@ -1,19 +1,23 @@
 import ReactFlow from 'reactflow';
 import styled from 'styled-components';
-import React,{MouseEvent} from 'react';
+import React from 'react';
 
 import 'reactflow/dist/style.css';
 import './App.css';
 
-const myWidth = window.innerWidth;
+const myWidth = window.innerWidth ;
 const mycenter = myWidth/2 -50;
 const myXOffset = 30;
 const myYOffset = 50;
 
-
+const descriptions = [
+  {id:'2', text:'22  this is an example text oejfdoawjfkas oe op eoioejf eijfpöef'},
+  {id:'3', text:'333 this is an example text oejfdoawjfkas oe op eoioejf eijfpöef'},
+  
+]
 
 const nodes = [
-  { id: '1', type: 'input', data: { label: 'Ines Skilltree', key: 'node1' }, position: { x: mycenter, y: myYOffset*1 } },
+  { id: '1', className: "first", selectable: false, type: 'input', data: { label: 'start game in 1993', key: 'node1' }, position: { x: mycenter-20, y: 0 } },
   { id: '2', data: { label: 'art class', key: 'node2' }, position: { x: mycenter - myXOffset*2, y: myYOffset*3 } },
   { id: '3', data: { label: 'gaming', key: 'node3' }, position: {  x: mycenter + myXOffset*2, y: myYOffset*3 }},
 
@@ -140,34 +144,84 @@ const edges = [
 
 
 const MyStyledDiv = styled.div`
-  background-color: blue;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
+  background: linear-gradient(45deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
 `;
+
+const Header = styled.div`
+height: 200px;
+padding-top: 50px;
+position: fixed;
+`;
+
 const TreeWrapper = styled.div`
-  background-color: white;
-  display: flex;
-  flex: 1;
-
-  //max-width: 400px;
-  height: 100vh;
+margin-top: 300px;
+  overflow: hidden;
+  height: 1800px;
+  width: 100%;
 `;
 
+const MyH1 = styled.h1`
+  text-align: left;
+  font-size: 150px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  padding: 0px 0px 0px 10px;
+
+`;
+const MyH2 = styled.h2`
+  text-align: left;
+  font-size: 40px;
+  font-weight: 200;
+  color: white; 
+  margin: 0;
+  margin-top: -30px;
+  padding: 0px 0px 0px 15px;
+`;
+
+const DescriptionWrapper = styled.div`
+position: fixed;
+top: 400px;
+right: 20px;
+  float: right;
+  min-width: 100px;
+  min-height: 200px;
+`;
+
+const MyText = styled.p`
+  text-align: right;
+  font-size: 20px;
+  color: white; 
+`;
 
 
 const entered = (event) => {
-  console.log(event.getNode);
+  //console.log(event.getNode);
 };
+
 
 
 function App() {
 
+
   return (
     <MyStyledDiv>
+      <Header>
+      <MyH1>SKILLTREE</MyH1>
+      <MyH2>Ines Hilz</MyH2>
+      </Header>
+
+      <DescriptionWrapper>
+        <MyText>hadfljasd ejf oledhjf sljfn fjidsj lohjfol</MyText>
+      </DescriptionWrapper>
+
       <TreeWrapper>
-        <ReactFlow nodes={nodes} edges={edges} panOnDrag={false} panOnScroll={false} preventScrolling={false} onNodeMouseEnter={entered}/>
+        <ReactFlow nodes={nodes} edges={edges} panOnDrag={false} panOnScroll={false} preventScrolling={false} onNodeMouseEnter={entered} />
       </TreeWrapper>
     </MyStyledDiv>
   );
@@ -181,6 +235,6 @@ export default App;
  *TODO:
  - can i scale the node when hover over it?
  - maybe also show a pop up when hovering?
- - box shadow?
- - hintergrund bild
+ - event listener resize window -> adjust H1 size und myXOffset?
+ - smooth scroll?
  */
