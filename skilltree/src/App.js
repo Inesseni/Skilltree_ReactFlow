@@ -7,10 +7,17 @@ import "./App.css";
 
 import Description from "./components/Description";
 
+const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+
 const myWidth = window.innerWidth;
-const mycenter = myWidth / 2 - 50;
-const myXOffset = 30;
-const myYOffset = 50;
+const mycenter = myWidth / 2 - 40;
+
+const myXOffset = clamp((window.innerWidth / 20), 25, 35);
+const myYOffset = clamp((window.innerWidth / 0.20), 50, 70);
+var fontSizeH1 = clamp((window.innerWidth / 10), 80, 600);
+
+console.log(fontSizeH1);
+
 var focusedNode = 0;
 var nodeClicked = false;
 
@@ -450,10 +457,11 @@ const TreeWrapper = styled.div`
 
 const MyH1 = styled.h1`
   text-align: left;
-  font-size: 150px;
+  font-size:  ${props => props.width}px;
   font-weight: 600;
   color: white;
-  margin: 0;
+  margin:0;
+  margin-top: -20px;
   padding: 0px 0px 0px 10px;
 `;
 const MyH2 = styled.h2`
@@ -462,7 +470,7 @@ const MyH2 = styled.h2`
   font-weight: 200;
   color: white;
   margin: 0;
-  margin-top: -30px;
+  margin-top: 0px;
   padding: 0px 0px 0px 15px;
 `;
 
@@ -551,7 +559,7 @@ function App() {
   return (
     <MyStyledDiv>
       <Header>
-        <MyH1>SKILLTREE</MyH1>
+        <MyH1 width={fontSizeH1}>SKILLTREE</MyH1>
         <MyH2>Ines Hilz</MyH2>
       </Header>
 
