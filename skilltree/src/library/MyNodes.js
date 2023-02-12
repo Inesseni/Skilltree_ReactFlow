@@ -197,42 +197,56 @@ const nodes = [
       text: "Part of my Front-End-Journey is to find tools that make my life easier. Figma falls into that category, i love how easy it is to set up a prototype and get an idea across!",
     },
   
-    //left path
+    ///////////left path
     {
       id: "25",
       data: { label: "photography", key: "node26" },
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 9 },
+      title: "PHOTOGRAPHY",
+      text: "Taking photos has been a way to document the world and myself, and was always a big part of my creative experiments.",
     },
     {
       id: "26",
       data: { label: "video", key: "node27" },
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 12 },
+      title: "VIDEO",
+      text: "What a better way to document stuff with 24 photos per second? I love making tiny video clips about every project to share on social media.",
     },
     {
       id: "27",
       data: { label: "Photoshop", key: "node28" },
       position: { x: mycenter - myXOffset * 2, y: myYOffset * 10.7 },
+      title: "PHOTOSHOP",
+      text: "Started to edit my photos, created (very cool) collages and experimented with all the functionality Adobe has to offer.",
     },
     {
       id: "28",
       data: { label: "Texturing", key: "node29" },
       position: { x: mycenter, y: myYOffset * 12.7 },
+      title: "TEXTURING",
+      text: "My Photoshop and drawing skills come in handy when i need to create textures for 3D Models!",
     },
     {
       id: "29",
       type: "output",
       data: { label: "2D Animation", key: "node30" },
       position: { x: mycenter - myXOffset * 2, y: myYOffset * 14 },
+      title: "2D ANIMATION",
+      text: "Little stop motion clips turned into gifs turned into frame-by-frame animations. To this day i love drawing animations by hand, but also use tools like spine.",
     },
     {
       id: "30",
       data: { label: "Youtube", key: "node31" },
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 15.5 },
+      title: "YOUTUBE",
+      text: "2022 i started to upload videos of my projects more often to youtube, until i finally started doing tutorials on social AR! Planning to do more topics and tools soon.",
     },
     {
       id: "31",
       data: { label: "Premiere / After effects", key: "node32" },
       position: { x: mycenter - myXOffset * 7, y: myYOffset * 14 },
+      title: "PREMIERE / AFTER EFFECTS",
+      text: "I can't edit my videos on my phone forever.. i already learned a thing or two about this great tools during university which helps a whol lot!",
     },
   
     {
@@ -241,6 +255,8 @@ const nodes = [
       type: "output",
       data: { label: "teaching", key: "node33" },
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 19 },
+      title: "TEACHING",
+      text: "It is so rewarding to see that my tutorials are helpful to people! I really like sharing my knowledge and want to lean more into teaching this year.",
     },
     {
       id: "33",
@@ -248,6 +264,8 @@ const nodes = [
       type: "output",
       data: { label: "video editing", key: "node34" },
       position: { x: mycenter - myXOffset * 7, y: myYOffset * 17.5 },
+      title: "VIDEO EDITING",
+      text: "I'm trying to improve my video quality with every new video. Engaging and fun editing that keeps people hooked is something i want to get better at!",
     },
   ];
 
