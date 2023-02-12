@@ -1,5 +1,5 @@
 import ReactFlow from "reactflow";
-import React, { useState } from "react";
+import React, {useState } from "react";
 
 import "reactflow/dist/style.css";
 import "./App.css";
@@ -10,64 +10,70 @@ import {MyStyledDiv, Header, TreeWrapper, MyH1, MyH2, DescriptionWrapper} from '
 import Description from "./components/Description";
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
-
 var fontSizeH1 = clamp((window.innerWidth / 10), 80, 600);
-var focusedNode = 0;
-var nodeClicked = false;
-
 
 function App() {
-  const [description, setDescription] = React.useState("");
-  const [titlee, setTitle] = React.useState("");
-  const [selectedNode, setSelectedNode] = React.useState(null);
-  const [nodesCopy, setNodesCopy] = useState(MyNodes);
+
+  const [myState, setMyState] = useState({
+    selectedNode: 0,
+    description: '',
+    title: '',
+    nodesCopy: MyNodes,
+    focusedNode: null,
+    nodeClicked: false,
+  });
 
 
   const entered = (event, node) => {
-    focusedNode = { node }.node.id;
-    console.log(focusedNode);
-    if (nodeClicked) return;
+    var newNode = {node}.node.id;
+    setMyState({ ...myState, focusedNode : newNode})
 
-    setDescription(MyNodes[focusedNode -1].text);
-    setTitle(MyNodes[focusedNode-1].title);
+    console.log(myState.nodeClicked)
+
+    if(myState.nodeClicked) return;
+    updateDescription(newNode);
   };
+
 
   const exit = (event, node) => {
-    if (nodeClicked) return;
-    setDescription("");
-    setTitle("");
+    if(myState.nodeClicked) return;
+    setMyState({ ...myState, title : "", description : ""})
   };
 
+  
   const selected = (event, node) => {
-    if (selectedNode === node.id) {
-      setSelectedNode(null);
+    var newNode = {node}.node.id;
 
-      // make a copy of nodes and update the selected property of all nodes to false
-      let updatedNodes = [...nodesCopy];
+    ////Same node clicked
+    if(newNode === myState.selectedNode){
+
+      //copy nodes array and de-select all nodes
+      let updatedNodes = [...myState.nodesCopy];
       updatedNodes.forEach((n) => {
         n.selected = false;
       });
-      setNodesCopy(updatedNodes);
-    } else {
-      setSelectedNode(node.id);
 
-      // make a copy of nodes and update the selected property of the selected node to true, and all others to false
-      let updatedNodes = [...nodesCopy];
+      //update the selected node, if a node is clicked and the new (unselected) node Array
+      setMyState({ ...myState, selectedNode : null, nodesCopy : updatedNodes, nodeClicked : false})
+
+    ///// New node clicked
+    }else{
+      console.log("new node");
+
+      let updatedNodes = [...myState.nodesCopy];
       updatedNodes.forEach((n) => {
-        n.selected = n.id === node.id;
-      });
-      setNodesCopy(updatedNodes);
+      n.selected = n.id === node.id;
+    });
+    
+      var nodee = myState.nodesCopy[newNode - 1];
+      setMyState({ ...myState, description: nodee.text, title : nodee.title, selectedNode : nodee.id, nodesCopy : updatedNodes, nodeClicked : true})
     }
+  };
 
-    if (selectedNode === focusedNode) {
-      nodeClicked = false;
-      setDescription("");
-      setTitle("");
-    } else {
-      nodeClicked = true;
-      setDescription(MyNodes[focusedNode-1].text);
-      setTitle(MyNodes[focusedNode-1].title);
-    }
+
+  const updateDescription = (nodeId) => {
+    var node = myState.nodesCopy[nodeId -1];
+    setMyState({ ...myState, description: node.text, title: node.title});
   };
 
   return (
@@ -78,12 +84,12 @@ function App() {
       </Header>
 
       <DescriptionWrapper>
-        <Description description={description} title={titlee} />
+        <Description description={myState.description} title={myState.title} />
       </DescriptionWrapper>
 
       <TreeWrapper>
         <ReactFlow
-          nodes={nodesCopy}
+          nodes={myState.nodesCopy}
           edges={MyEdges}
           panOnDrag={false}
           panOnScroll={false}
@@ -105,10 +111,7 @@ export default App;
  - can i scale the node when hover over it?
  - smooth scroll?
 
-
-
  ----
-
   //console.log({ name: 'onNodeMouseEnter', event, node } )
   //console.log({node}.node.id);
 */

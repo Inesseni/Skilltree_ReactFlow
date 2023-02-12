@@ -85,7 +85,7 @@ const nodes = [
     },
   
     {
-      id: "12",
+      id: "11",
       type: "output",
       data: { label: "3D Modelling", key: "node12" },
       position: { x: mycenter + myXOffset * 4, y: myYOffset * 12.5 },
@@ -93,16 +93,16 @@ const nodes = [
       text: "I love stylized low poly art and handpainted textures! I either model all the assets i need myself, or get them online and customize them for quick prototypes.",
     },
     {
-      id: "13",
+      id: "12",
       type: "output",
       data: { label: "3D Animation", key: "node13" },
       position: { x: mycenter + myXOffset * 6, y: myYOffset * 11 },
       title: "3D ANIMATION",
-      text: "Although i don't do a lot of 3D animation these days i know how to rig, weight paint, animate and how to use the right tools to get fast results.",
+      text: "Although i don't do a lot of 3D animation anymore i know how to rig, weight paint, animate and how to use the right tools to get fast results.",
     },
   
     {
-      id: "14",
+      id: "13",
       type: "output",
       data: { label: "C#", key: "node14" },
       position: { x: mycenter + myXOffset * 4, y: myYOffset * 16 },
@@ -110,14 +110,14 @@ const nodes = [
       text: "Although i initially hated programming and tried to find a way around it, i loved it at the end of my studies with the help of great mentors and by doing game jams!",
     },
     {
-      id: "15",
+      id: "14",
       data: { label: "AR", key: "node15" },
       position: { x: mycenter + myXOffset * 2, y: myYOffset * 17.3 },
       title: "AR",
       text: "AR is fascinating to me. You are still grounded in reality, it's widely used already and can be experienced and shared with others very easily.",
     },
     {
-      id: "16",
+      id: "15",
       data: { label: "VR", key: "node16" },
       position: { x: mycenter - myXOffset * 0, y: myYOffset * 16 },
       title: "VR",
@@ -125,21 +125,21 @@ const nodes = [
     },
   
     {
-      id: "17",
+      id: "16",
       data: { label: "Social AR", key: "node17" },
       position: { x: mycenter + myXOffset * 4, y: myYOffset * 19.3 },
       title: "SOCIAL AR",
       text: "After my studies i started to make AR effects for social media like Instagram and Snapchat! I love how accesible it is for everyone and that people have lot of fun with it!",
     },
     {
-      id: "18",
+      id: "17",
       data: { label: "JavaScript", key: "node18" },
       position: { x: mycenter + myXOffset * 4, y: myYOffset * 20.5 },
       title: "JAVASCRIPT",
       text: "In 2021 i started to learn a lot about JavaScript, since all the AR software i used for social AR is based on it. And it led me deeper into my programming adventures!",
     },
     {
-      id: "19",
+      id: "18",
       data: { label: "Front End", key: "node19" },
       position: { x: mycenter + myXOffset * 2, y: myYOffset * 22.5 },
       title: "FRONT END",
@@ -147,7 +147,7 @@ const nodes = [
     },
   
     {
-      id: "20",
+      id: "19",
       className: "loading",
       type: "output",
       data: { label: "Three.js", key: "node20" },
@@ -156,14 +156,14 @@ const nodes = [
       text: "Most interesting for me is Three.js at this point. I love seeing creative use of 3D in web and want to make beautiful interactive websites myself, accessible for all!",
     },
     {
-      id: "21",
+      id: "20",
       data: { label: "HTML / CSS", key: "node21" },
       position: { x: mycenter + myXOffset * 2, y: myYOffset * 27.5 },
       title: "HTML/CSS",
       text: "Although i dabbled into HTML and CSS already in the past, i feel like i am now finally using it's full potential.",
     },
     {
-      id: "22",
+      id: "21",
       className: "loading",
       type: "output",
       data: { label: "React (+Native)", key: "node22" },
@@ -173,7 +173,7 @@ const nodes = [
     },
   
     {
-      id: "23",
+      id: "22",
       className: "loading",
       data: { label: "WebXR", key: "node23" },
       position: { x: mycenter - myXOffset * 0, y: myYOffset * 19.9 },
@@ -181,7 +181,7 @@ const nodes = [
       text: "My ultimate goal at the moment is to create a WebXR app and make AR & VR apps more accessible for everyone through their browser!",
     },
     {
-      id: "24",
+      id: "23",
       type: "output",
       data: { label: "GitHub", key: "node24" },
       position: { x: mycenter + myXOffset * 4, y: myYOffset * 26.3 },
@@ -189,7 +189,7 @@ const nodes = [
       text: "Livesafer and a coders best friend! I learned to love GitHub .. the hard way.",
     },
     {
-      id: "25",
+      id: "24",
       type: "output",
       data: { label: "Figma", key: "node25" },
       position: { x: mycenter + myXOffset * 5.5, y: myYOffset * 25 },
@@ -199,51 +199,51 @@ const nodes = [
   
     //left path
     {
-      id: "26",
+      id: "25",
       data: { label: "photography", key: "node26" },
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 9 },
     },
     {
-      id: "27",
+      id: "26",
       data: { label: "video", key: "node27" },
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 12 },
     },
     {
-      id: "28",
+      id: "27",
       data: { label: "Photoshop", key: "node28" },
       position: { x: mycenter - myXOffset * 2, y: myYOffset * 10.7 },
     },
     {
-      id: "29",
+      id: "28",
       data: { label: "Texturing", key: "node29" },
       position: { x: mycenter, y: myYOffset * 12.7 },
     },
     {
-      id: "30",
+      id: "29",
       type: "output",
       data: { label: "2D Animation", key: "node30" },
       position: { x: mycenter - myXOffset * 2, y: myYOffset * 14 },
     },
     {
-      id: "31",
+      id: "30",
       data: { label: "Youtube", key: "node31" },
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 15.5 },
     },
     {
-      id: "32",
+      id: "31",
       data: { label: "Premiere / After effects", key: "node32" },
       position: { x: mycenter - myXOffset * 7, y: myYOffset * 14 },
     },
   
     {
-      id: "33",
+      id: "32",
       className: "loading",
       type: "output",
       data: { label: "teaching", key: "node33" },
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 19 },
     },
     {
-      id: "34",
+      id: "33",
       className: "loading",
       type: "output",
       data: { label: "video editing", key: "node34" },

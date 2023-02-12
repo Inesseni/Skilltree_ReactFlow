@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const MyStyledDiv = styled.div`
   background: linear-gradient(
     45deg,
@@ -23,7 +22,7 @@ export const TreeWrapper = styled.div`
   pointer-events: none;
   margin-top: 300px;
   overflow: hidden;
-  height: 1800px;
+  height: 2400px;
   width: 100%;
 `;
 
