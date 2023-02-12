@@ -15,6 +15,7 @@ const nodes = [
       position: { x: mycenter - 20, y: 0 },
       title: "START",
       text: "Born and raised in bavaria!",
+      imgLink : "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/243308_218906261471224_7197553_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=DW_2_hRItbUAX-ZJijJ&_nc_ht=scontent-ham3-1.xx&oh=00_AfBRqHbmT2yr9FLtiy63BsYUQsLfW2W6DxFH6dqyE7Tw1g&oe=6410BA2C",
     },
     {
       id: "2",
@@ -22,13 +23,15 @@ const nodes = [
       position: { x: mycenter - myXOffset * 2, y: myYOffset * 3 },
       title: "ART CLASS",
       text: "Art has always been my biggest strength. \n I was part of the Leistungskurs and participated in art competitions and travels to the Bienalle in Venice.",
-    },
+      imgLink : "https://scontent-ham3-1.xx.fbcdn.net/v/t1.18169-9/1235172_704747299553782_1276212410_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=19026a&_nc_ohc=TXThaxlGzV8AX_w1bXF&_nc_ht=scontent-ham3-1.xx&oh=00_AfC1l6EiZA276aL3UnBu6tVYL0uvrRaF_66r88SAldYHRQ&oe=6410AEEC",
+     },
     {
       id: "3",
       data: { label: "gaming", key: "node3" },
       position: { x: mycenter + myXOffset * 2, y: myYOffset * 3 },
       title: "GAMING",
       text: "My older brother showed me a lot of games growing up. Nintendos best on the gamecube, The Sims, Trackmania, Plants vs. Zombies, and many more.",
+      imgLink : "https://upload.wikimedia.org/wikipedia/commons/c/c9/Moon.jpg?20211117130251",
     },
   
     {
@@ -38,6 +41,7 @@ const nodes = [
       position: { x: mycenter - myXOffset * 4, y: myYOffset * 5 },
       title: "ART & DESIGN BASICS",
       text: "I was lucky to have a great art teacher, she really sparked an interest in me about the old masters, modernism and color theory!",
+      imgLink : "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/1780268_780415931986918_2120378828_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=2c4854&_nc_ohc=C3_TY1OTmFsAX_fsFkU&_nc_oc=AQl7RCdXQEr6IQeDvL_vaCYkAeei2ephV5wvzxsPRsn0NpUK1AQmmhjU4FhW0aXtjkY&_nc_ht=scontent-ham3-1.xx&oh=00_AfChGCeTOkGBXpYqRPo-Q5BpX3fCtJH5emGMkQXRKjsJZg&oe=6410A75E",
     },
     {
       id: "5",
@@ -45,6 +49,7 @@ const nodes = [
       position: { x: mycenter - myXOffset * 2, y: myYOffset * 7 },
       title: "DRAWING",
       text: "When i was younger i was convinced: whenever i start a drawing, it turns into gold! Today i am more realistic about my art, but still get lost for hours drawing in the flow.",
+        imgLink: "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/478472_406220069406508_1750300733_o.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=MdJsdSi-oFkAX-jh9_N&_nc_ht=scontent-ham3-1.xx&oh=00_AfAgFkALvhawByO6FQVLHenPvTFgIBdKC160M-CvHfW3mw&oe=6410A627",
     },
     {
       id: "6",
@@ -52,6 +57,7 @@ const nodes = [
       position: { x: mycenter, y: myYOffset * 5 },
       title: "UNIVERSITY",
       text: "Following my passion for art and design, i studies Multimedia|VR-Design. I was fascinated by immersive media and wanted to teleport people into a different world!",
+        imgLink: "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/12710761_1227164357312071_3490632103922898842_o.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=jtZg-JRh1HkAX_rAzec&_nc_ht=scontent-ham3-1.xx&oh=00_AfC1gqhRqmOIc0GI5q0XDYvcH8-4invBUhVHTuUUwpodnA&oe=6410C612"
     },
   
     {
@@ -204,6 +210,7 @@ const nodes = [
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 9 },
       title: "PHOTOGRAPHY",
       text: "Taking photos has been a way to document the world and myself, and was always a big part of my creative experiments.",
+   imgLink: "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/774330_565551576806689_1249498654_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=01JqgNV5rEIAX-Zy4Fz&_nc_ht=scontent-ham3-1.xx&oh=00_AfADTw669r6cPLglFJ9QOgr8q2WhKP8XYG-hBNU1vBm7Ag&oe=6410A175"
     },
     {
       id: "26",
@@ -218,6 +225,8 @@ const nodes = [
       position: { x: mycenter - myXOffset * 2, y: myYOffset * 10.7 },
       title: "PHOTOSHOP",
       text: "Started to edit my photos, created (very cool) collages and experimented with all the functionality Adobe has to offer.",
+        imgLink: "https://scontent-ham3-1.xx.fbcdn.net/v/t1.18169-9/1902952_814418188586692_845048319_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=quIKdIL6vygAX8BS6_8&_nc_ht=scontent-ham3-1.xx&oh=00_AfA4_FpAV9CapnPXZJILECUfICZ3HkQglgON5RqYc2pSzQ&oe=6410A8B4",
+    //https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/13483062_1329413753753797_3860708358604064989_o.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=5iwUcMIorsUAX_N5SoW&_nc_ht=scontent-ham3-1.xx&oh=00_AfDXsf0JSVa-E6MammvA3kD-WgPNP2ssEY3VBlUOTnztEw&oe=64109D59
     },
     {
       id: "28",

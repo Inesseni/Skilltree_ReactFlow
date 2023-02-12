@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 export const MyStyledDiv = styled.div`
   background: linear-gradient(
@@ -60,3 +61,15 @@ export const MyText = styled.p`
   font-size: 20px;
   color: white;
 `;
+
+
+export const Image = styled.img`
+  position: fixed;
+  height: 300px;
+  top: 0;
+  left: 0;
+  opacity: ${props => props.opacity};
+  transition: opacity 0.2s;
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .2);
+`;
+
