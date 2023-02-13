@@ -249,6 +249,7 @@ const nodes = [
       position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 15.5 },
       title: "YOUTUBE",
       text: "2022 i started to upload videos of my projects more often to youtube, until i finally started doing tutorials on social AR! Planning to do more topics and tools soon.",
+      imgLink: "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/storyPics%2Fmithorns.png?alt=media&token=0c5f8450-0af0-42ab-9425-33592960537e"
     },
     {
       id: "31",
