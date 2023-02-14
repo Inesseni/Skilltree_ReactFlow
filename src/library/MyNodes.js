@@ -31,7 +31,6 @@ const nodes = [
       position: { x: mycenter + myXOffset * 2, y: myYOffset * 3 },
       title: "GAMING",
       text: "My older brother showed me a lot of games growing up. Nintendos best on the gamecube, The Sims, Trackmania, Plants vs. Zombies, and many more.",
-      imgLink : "https://upload.wikimedia.org/wikipedia/commons/c/c9/Moon.jpg?20211117130251",
     },
   
     {

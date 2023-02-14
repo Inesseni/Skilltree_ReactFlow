@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import React from "react";
 
 export const MyStyledDiv = styled.div`
   background: linear-gradient(
@@ -29,10 +28,10 @@ export const TreeWrapper = styled.div`
 
 export const MyH1 = styled.h1`
   text-align: left;
-  font-size:  ${props => props.width}px;
+  font-size: ${(props) => props.width}px;
   font-weight: 600;
   color: white;
-  margin:0;
+  margin: 0;
   margin-top: -20px;
   padding: 0px 0px 0px 10px;
 `;
@@ -50,26 +49,31 @@ export const DescriptionWrapper = styled.div`
   position: fixed;
   top: 400px;
   right: 20px;
-  float: right;
-  min-width: 200px;
-  min-height: 200px;
-  inline-size: min-content;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const MyText = styled.p`
+  float: right;
   text-align: right;
   font-size: 20px;
   color: white;
 `;
 
-
 export const Image = styled.img`
   position: fixed;
-  height: 300px;
+  max-height: 300px;
   top: 0;
   left: 0;
-  opacity: ${props => props.opacity};
+  opacity: ${(props) => props.opacity};
   transition: opacity 0.2s;
-  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .2);
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0.2);
 `;
 
+export const ImageMobile = styled.img`
+  max-height: 300px;
+  opacity: ${(props) => props.opacity};
+  transition: opacity 0.2s;
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0.2);
+`;
