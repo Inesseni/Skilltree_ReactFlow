@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { isMobile } from "react-device-detect";
 
 const MyTitle = styled.p`
   flex: 1;
@@ -28,6 +29,7 @@ const MyLink = styled.a`
 `;
 
 export const ImageMobile = styled.img`
+  max-width: 100%;
   opacity: ${(props) => props.opacity};
   transition: opacity 0.2s;
   box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0.2);
@@ -46,7 +48,9 @@ export default function ID2_artClass({
       <MyTitle>{title}</MyTitle>
       <MyText>{description}</MyText>
       <MyLink href={link}>{linktext}</MyLink>
-      <ImageMobile src={image} alt="" opacity={opacity}></ImageMobile>
+      {isMobile === true && (
+        <ImageMobile src={image} alt="" opacity={opacity}></ImageMobile>
+      )}
     </>
   );
 }

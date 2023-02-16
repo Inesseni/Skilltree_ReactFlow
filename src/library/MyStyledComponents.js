@@ -13,7 +13,7 @@ export const MyStyledDiv = styled.div`
 `;
 
 export const Header = styled.div`
-  height: 200px;
+  height: 250px;
   padding-top: 50px;
   position: fixed;
 `;
@@ -47,9 +47,10 @@ export const MyH2 = styled.h2`
 
 export const DescriptionWrapper = styled.div`
   position: fixed;
-  top: 400px;
-  right: 20px;
-  max-width: 400px;
+  top: ${(props) => (props.mobile ? "200px" : "400px")};
+  right: 0;
+  padding: 20px;
+  max-width: ${(props) => (props.mobile ? "100%" : "400px")};
   display: flex;
   flex-direction: column;
 `;
@@ -63,11 +64,12 @@ export const MyText = styled.p`
 
 export const Image = styled.img`
   position: fixed;
+  max-width: 300px;
   max-height: 300px;
   top: 0;
   left: 0;
   opacity: ${(props) => props.opacity};
-  transition: opacity 0.2s;
+  transition: opacity 1s;
   box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0.2);
 `;
 
