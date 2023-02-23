@@ -1,6 +1,7 @@
 /**
  * Hey Elliot :)
- * 1. How can i "preload" all thge images ? they load very slow on mobile 
+ * Try the online version here: https://kaleidoscopic-arithmetic-3b682b.netlify.app
+ * 1. How can i "preload" all thge images ? they load kinda slow on mobile 
  * 2. On mobile, if i double click a node, the text gets set to " " correctly, but the deselectAll() function doesn'T trigger and the last node
  *    still looks selected (see line 95)
   3.  On desktop, there is a fade in/out animation when you enter or leave a node. but it's buggy and only happens when you move slowly?
