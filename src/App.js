@@ -1,30 +1,67 @@
-import ReactFlow from "reactflow";
-import React, {useState , useEffect} from "react";
+/**
+ * Hey Elliot :)
+ * Try the online version here: https://kaleidoscopic-arithmetic-3b682b.netlify.app
+ * 1. How can i "preload" all thge images ? they load kinda slow on mobile 
+ * 2. On mobile, if i double click a node, the text gets set to " " correctly, but the deselectAll() function doesn'T trigger and the last node
+ *    still looks selected (see line 95)
+  3.  On desktop, there is a fade in/out animation when you enter or leave a node. but it's buggy and only happens when you move slowly?
+      If you move the mouse fast, it jumps opacity to 1 instantly ??
+ */
 
+
+
+
+import ReactFlow from "reactflow";
+import React, { useState, useEffect } from "react";
 import "reactflow/dist/style.css";
 import "./App.css";
-
-import MyNodes from './library/MyNodes';
-import MyEdges from './library/MyEdges';
-import {MyStyledDiv, Header, TreeWrapper, MyH1, MyH2, DescriptionWrapper, Image, ImageWrapper} from './library/MyStyledComponents';
+import MyNodes from "./library/MyNodes";
+import MyEdges from "./library/MyEdges";
+import {
+  MyStyledDiv,
+  Header,
+  TreeWrapper,
+  MyH1,
+  MyH2,
+  DescriptionWrapper,
+  Image,
+} from "./library/MyStyledComponents";
 import Description from "./components/Description";
+import { isMobile } from "react-device-detect";
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
-var fontSizeH1 = clamp((window.innerWidth / 10), 80, 600);
+var fontSizeH1 = clamp(window.innerWidth / 10, 40, 600);
+
+function recursiveAnimateTitle(string) {
+  let firstLetter = string[0];
+  let title = document.querySelector("title");
+  title.innerHTML += firstLetter;
+  if (string.length > 1) {
+    setTimeout(function () {
+      recursiveAnimateTitle(string.substring(1));
+    }, 100);
+  }
+}
+
+function animateTitle(string) {
+  document.querySelector("title").innerHTML = "";
+  recursiveAnimateTitle(string);
+}
+
+animateTitle("SKILLTREE");
 
 function App() {
-
   const [myState, setMyState] = useState({
     selectedNode: 0,
-    description: '',
-    title: '',
+    description: "",
+    title: "",
     nodesCopy: MyNodes,
     focusedNode: null,
     nodeClicked: false,
+    imageLink: null,
   });
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
-  const [image, setImage] = useState(myState.nodesCopy[1].imgLink);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -33,91 +70,132 @@ function App() {
         y: event.clientY,
       });
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
-
-
-  const entered = (event, node) => {
-    var newNode = {node}.node.id;
-    setMyState({ ...myState, focusedNode : newNode})
-
-
-    
-    if(myState.nodeClicked) return;
-    var newImg = myState.nodesCopy[newNode-1].imgLink;
-    setImage(newImg);
-    if(image != null){
+  // effect whenever you focus a new node
+  useEffect(() => {
+    if (myState.nodeClicked) return;
+    if (myState.focusedNode) {
+      updateDescription(myState.focusedNode.id);
       setOpacity(1);
-}
-    updateDescription(newNode);
-  };
+    } else {
+      updateDescription();
+      setOpacity(0);
+    }
+  }, [myState.focusedNode]);
 
-
-  const exit = (event, node) => {
-    if(myState.nodeClicked) return;
-    setMyState({ ...myState, title : "", description : ""})
-
-    setOpacity(0);
-  };
-
-  
+  ////// function if the user clicks on a label
   const selected = (event, node) => {
-    var newNode = {node}.node.id;
+    var newNode = { node }.node.id;
 
-    ////Same node clicked
-    if(newNode === myState.selectedNode){
+    if (newNode === myState.selectedNode) {
+      ////Same node clicked
 
-      //copy nodes array and de-select all nodes
+      deselectAll(); // is an extra function because i want to get the same effect when clicking on the background
+    } else {
+      ///// New node clicked
+
+      //copy nodes array and set the new selected one to selected
       let updatedNodes = [...myState.nodesCopy];
       updatedNodes.forEach((n) => {
-        n.selected = false;
+        n.selected = n.id === node.id;
       });
 
-      //update the selected node, if a node is clicked and the new (unselected) node Array
-      setMyState({ ...myState, selectedNode : null, nodesCopy : updatedNodes, nodeClicked : false})
-
-    ///// New node clicked
-    }else{
-      //console.log("new node");
-
-      let updatedNodes = [...myState.nodesCopy];
-      updatedNodes.forEach((n) => {
-      n.selected = n.id === node.id;
-    });
-    
-      var nodee = myState.nodesCopy[newNode - 1];
-      setMyState({ ...myState, description: nodee.text, title : nodee.title, selectedNode : nodee.id, nodesCopy : updatedNodes, nodeClicked : true})
+      var nodee = myState.nodesCopy[newNode];
+      setMyState({
+        ...myState,
+        description: nodee.text,
+        title: nodee.title,
+        selectedNode: nodee.id,
+        nodesCopy: updatedNodes,
+        nodeClicked: true,
+        imageLink: nodee.imgLink,
+      });
     }
   };
 
+  const deselectAll = () => {
+    //copy nodes array and de-select all nodes
+    let updatedNodes = [...myState.nodesCopy];
+    updatedNodes.forEach((n) => {
+      n.selected = false;
+    });
 
-  const updateDescription = (nodeId) => {
-    var node = myState.nodesCopy[nodeId -1];
-    setMyState({ ...myState, description: node.text, title: node.title});
+    setMyState({
+      ...myState,
+      selectedNode: null,
+      nodesCopy: updatedNodes,
+      nodeClicked: false,
+      imageLink: null,
+      title: "",
+      description: "",
+      imageLink: null,
+    });
   };
 
+  const backgroundClicked = () => {
+    if (myState.focusedNode) return;
+    if (isMobile) return;
+    deselectAll();
+  };
 
+  const updateDescription = (nodeId) => {
+    if (!nodeId) {
+      // clear everything
+      setMyState({
+        ...myState,
+        title: "",
+        description: "",
+        imageLink: null,
+      });
+    } else {
+      // set new text
+      var nodee = myState.nodesCopy[nodeId];
+      setMyState({
+        ...myState,
+        description: nodee.text,
+        title: nodee.title,
+        imageLink: nodee.imgLink,
+      });
+    }
+  };
 
   return (
-    <MyStyledDiv>
-      <Image style={{
-        top: cursorPosition.y - 250,
-        left: cursorPosition.x - 500,
-      }} 
-      src={image} 
-      alt="" 
-      opacity={opacity}/>
+    <MyStyledDiv onClick={backgroundClicked}>
+      {isMobile === false && (
+        <Image
+          style={{
+            top: cursorPosition.y - 150,
+            left: cursorPosition.x - 320,
+          }}
+          src={myState.imageLink}
+          alt=""
+          opacity={opacity}
+        />
+      )}
+
       <Header>
         <MyH1 width={fontSizeH1}>SKILLTREE</MyH1>
         <MyH2>Ines Hilz</MyH2>
+        
       </Header>
 
-      <DescriptionWrapper>
-        <Description description={myState.description} title={myState.title} />
+      <DescriptionWrapper mobile={isMobile}>
+        <Description
+          description={myState.description}
+          title={myState.title}
+          image={myState.imageLink}
+          opacity={opacity}
+        />
+        { /*
+        {isMobile === false && (
+        <img src={myState.imageLink} alt="" opacity={opacity} />
+      )}
+         <img src={myState.nodesCopy[1].imgLink} alt="" /> */ }
       </DescriptionWrapper>
 
       <TreeWrapper>
@@ -127,9 +205,14 @@ function App() {
           panOnDrag={false}
           panOnScroll={false}
           preventScrolling={false}
-          onNodeMouseEnter={entered}
-          onNodeMouseLeave={exit}
+          onNodeMouseEnter={(event, node) =>
+            setMyState({ ...myState, focusedNode: node })
+          }
+          onNodeMouseLeave={(event, node) =>
+            setMyState({ ...myState, focusedNode: null })
+          }
           onNodeClick={selected}
+          nodesDraggable={false}
         />
       </TreeWrapper>
     </MyStyledDiv>
@@ -139,12 +222,6 @@ function App() {
 export default App;
 
 /**
- * 
- *TODO:
- - can i scale the node when hover over it?
- - smooth scroll?
-
- ----
   //console.log({ name: 'onNodeMouseEnter', event, node } )
   //console.log({node}.node.id);
 */
