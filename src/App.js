@@ -1,3 +1,15 @@
+/**
+ * Hey Elliot :)
+ * 1. How can i "preload" all thge images ? they load very slow on mobile 
+ * 2. On mobile, if i double click a node, the text gets set to " " correctly, but the deselectAll() function doesn'T trigger and the last node
+ *    still looks selected (see line 95)
+  3.  On desktop, there is a fade in/out animation when you enter or leave a node. but it's buggy and only happens when you move slowly?
+      If you move the mouse fast, it jumps opacity to 1 instantly ??
+ */
+
+
+
+
 import ReactFlow from "reactflow";
 import React, { useState, useEffect } from "react";
 import "reactflow/dist/style.css";
@@ -17,7 +29,7 @@ import Description from "./components/Description";
 import { isMobile } from "react-device-detect";
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
-var fontSizeH1 = clamp(window.innerWidth / 10, 80, 600);
+var fontSizeH1 = clamp(window.innerWidth / 10, 40, 600);
 
 function recursiveAnimateTitle(string) {
   let firstLetter = string[0];
@@ -126,6 +138,7 @@ function App() {
 
   const backgroundClicked = () => {
     if (myState.focusedNode) return;
+    if (isMobile) return;
     deselectAll();
   };
 
@@ -167,6 +180,7 @@ function App() {
       <Header>
         <MyH1 width={fontSizeH1}>SKILLTREE</MyH1>
         <MyH2>Ines Hilz</MyH2>
+        
       </Header>
 
       <DescriptionWrapper mobile={isMobile}>
@@ -176,6 +190,11 @@ function App() {
           image={myState.imageLink}
           opacity={opacity}
         />
+        { /*
+        {isMobile === false && (
+        <img src={myState.imageLink} alt="" opacity={opacity} />
+      )}
+         <img src={myState.nodesCopy[1].imgLink} alt="" /> */ }
       </DescriptionWrapper>
 
       <TreeWrapper>
@@ -202,12 +221,6 @@ function App() {
 export default App;
 
 /**
- * 
- *TODO:
- - upload images to firebase
- - can i scale the node when hover over it?
- - smooth scroll?
- ----
   //console.log({ name: 'onNodeMouseEnter', event, node } )
   //console.log({node}.node.id);
 */

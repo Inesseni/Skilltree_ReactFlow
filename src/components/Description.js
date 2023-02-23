@@ -9,7 +9,7 @@ const MyTitle = styled.p`
   font-weight: 600;
   color: white;
   margin: 0;
-  padding: 0px 0px 0px 10px;
+  padding: 0px 20px;
 `;
 
 const MyText = styled.p`
@@ -17,8 +17,7 @@ const MyText = styled.p`
   text-align: right;
   font-size: 15px;
   color: white;
-  margin: 0;
-  padding: 20px 0px 20px 10px;
+  padding: 0px 20px;
 `;
 
 const MyLink = styled.a`
@@ -28,12 +27,15 @@ const MyLink = styled.a`
   cursor: pointer;
 `;
 
+/*
 export const ImageMobile = styled.img`
-  max-width: 100%;
   opacity: ${(props) => props.opacity};
   transition: opacity 0.2s;
   box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0.2);
+  width: 100%;
+  margin: 0px 20px;
 `;
+*/ 
 
 export default function ID2_artClass({
   title,
@@ -48,8 +50,10 @@ export default function ID2_artClass({
       <MyTitle>{title}</MyTitle>
       <MyText>{description}</MyText>
       <MyLink href={link}>{linktext}</MyLink>
-      {isMobile === true && (
-        <ImageMobile src={image} alt="" opacity={opacity}></ImageMobile>
+            {/*<ImageMobile src={image} alt="" />*/}
+{ 
+      isMobile === true && (
+        <img style={{margin: "20px"}} src={image} alt="" opacity={opacity} />
       )}
     </>
   );

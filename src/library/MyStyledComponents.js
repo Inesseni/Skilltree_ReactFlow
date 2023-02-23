@@ -22,7 +22,7 @@ export const TreeWrapper = styled.div`
   pointer-events: none;
   margin-top: 300px;
   overflow: hidden;
-  height: 2400px;
+  height: 2800px;
   width: 100%;
 `;
 
@@ -46,10 +46,11 @@ export const MyH2 = styled.h2`
 `;
 
 export const DescriptionWrapper = styled.div`
+
   position: fixed;
   top: ${(props) => (props.mobile ? "200px" : "400px")};
   right: 0;
-  padding: 20px;
+  width: 100%;
   max-width: ${(props) => (props.mobile ? "100%" : "400px")};
   display: flex;
   flex-direction: column;
@@ -64,8 +65,8 @@ export const MyText = styled.p`
 
 export const Image = styled.img`
   position: fixed;
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 700px;
+  max-height: 600px;
   top: 0;
   left: 0;
   opacity: ${(props) => props.opacity};

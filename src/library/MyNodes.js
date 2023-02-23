@@ -15,8 +15,7 @@ const nodes = [
     position: { x: mycenter - 20, y: 0 },
     title: "START",
     text: "Born and raised in bavaria!",
-    imgLink:
-      "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/243308_218906261471224_7197553_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=DW_2_hRItbUAX-ZJijJ&_nc_ht=scontent-ham3-1.xx&oh=00_AfBRqHbmT2yr9FLtiy63BsYUQsLfW2W6DxFH6dqyE7Tw1g&oe=6410BA2C",
+    imgLink: require("./img/1.jpg"),
   },
   {
     id: "1",
@@ -26,8 +25,7 @@ const nodes = [
     position: { x: mycenter - 20, y: 0 },
     title: "START",
     text: "Born and raised in bavaria!",
-    imgLink:
-      "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/243308_218906261471224_7197553_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=DW_2_hRItbUAX-ZJijJ&_nc_ht=scontent-ham3-1.xx&oh=00_AfBRqHbmT2yr9FLtiy63BsYUQsLfW2W6DxFH6dqyE7Tw1g&oe=6410BA2C",
+    imgLink: require("./img/1.jpg"),
   },
   {
     id: "2",
@@ -35,8 +33,7 @@ const nodes = [
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 3 },
     title: "ART CLASS",
     text: "Art has always been my biggest strength. \n I was part of the Leistungskurs and participated in art competitions and travels to the Bienalle in Venice.",
-    imgLink:
-      "https://scontent-ham3-1.xx.fbcdn.net/v/t1.18169-9/1235172_704747299553782_1276212410_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=19026a&_nc_ohc=TXThaxlGzV8AX_w1bXF&_nc_ht=scontent-ham3-1.xx&oh=00_AfC1l6EiZA276aL3UnBu6tVYL0uvrRaF_66r88SAldYHRQ&oe=6410AEEC",
+    imgLink: require("./img/2.jpg"),  
   },
   {
     id: "3",
@@ -44,7 +41,7 @@ const nodes = [
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 3 },
     title: "GAMING",
     text: "My older brother would always give me CDs with cool games to play or i went to the local library to borrow them. Unreal tournament, Sacred, The Sims, Trackmania, Plants vs. Zombies, and many more.",
-  },
+    imgLink: require("./img/3.jpeg") },
 
   {
     id: "4",
@@ -53,18 +50,14 @@ const nodes = [
     position: { x: mycenter - myXOffset * 4, y: myYOffset * 5 },
     title: "ART & DESIGN BASICS",
     text: "I was lucky to have a great art teacher, she really sparked an interest in me about the old masters, modernism and color theory!",
-    imgLink:
-      "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/1780268_780415931986918_2120378828_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=2c4854&_nc_ohc=C3_TY1OTmFsAX_fsFkU&_nc_oc=AQl7RCdXQEr6IQeDvL_vaCYkAeei2ephV5wvzxsPRsn0NpUK1AQmmhjU4FhW0aXtjkY&_nc_ht=scontent-ham3-1.xx&oh=00_AfChGCeTOkGBXpYqRPo-Q5BpX3fCtJH5emGMkQXRKjsJZg&oe=6410A75E",
-  },
+    imgLink: require("./img/4.jpg")},
   {
     id: "5",
     data: { label: "drawing", key: "node5" },
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 7 },
     title: "DRAWING",
     text: "When i was younger i was convinced: whenever i start a drawing, it turns into gold! Today i am more realistic about my art, but still get lost for hours drawing in the flow.",
-    imgLink:
-      "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/478472_406220069406508_1750300733_o.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cdbe9c&_nc_ohc=MdJsdSi-oFkAX-jh9_N&_nc_ht=scontent-ham3-1.xx&oh=00_AfAgFkALvhawByO6FQVLHenPvTFgIBdKC160M-CvHfW3mw&oe=6410A627",
-  },
+    imgLink: require("./img/5.jpg")},
   {
     id: "6",
     data: { label: "university", key: "node6" },
@@ -72,7 +65,7 @@ const nodes = [
     title: "UNIVERSITY",
     text: "Following my passion for art and design, i studies Multimedia|VR-Design. I was fascinated by immersive media and wanted to teleport people into a different world!",
     imgLink:
-      "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/12710761_1227164357312071_3490632103922898842_o.jpg?_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=jtZg-JRh1HkAX_rAzec&_nc_ht=scontent-ham3-1.xx&oh=00_AfC1gqhRqmOIc0GI5q0XDYvcH8-4invBUhVHTuUUwpodnA&oe=6410C612",
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F6.jpg?alt=media&token=ad336b28-4324-49ec-87e9-3dca03d2b420",
   },
 
   {
@@ -81,6 +74,8 @@ const nodes = [
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 7 },
     title: "GAME DESIGN",
     text: "During my studies i focused on game design and XR. Interactive immersive media often requires our full attention and is therefore a great tool for education and fun! I think that's why i was always drawn to it.",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F7.JPG?alt=media&token=deed0448-8ce9-4614-9cee-a64730c096b2",
   },
   {
     id: "8",
@@ -88,6 +83,8 @@ const nodes = [
     position: { x: mycenter, y: myYOffset * 9 },
     title: "GAME ART",
     text: "Can't get enough of making game art! First released game: Purry furry adventurry!",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F8.jpg?alt=media&token=2d36b2b3-d65d-4a51-95cd-f41da278ffb0",
   },
 
   {
@@ -96,6 +93,9 @@ const nodes = [
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 14 },
     title: "UNITY",
     text: "When i started making games, i went to Unity classes at my university. Started out with PlayMaker, but soon switched to big-boy C# to make interactive 2D and 3D apps.",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F9.JPG?alt=media&token=3cb42e4a-ebc5-4e17-be3d-bad7e5aaf90c",
+    link: "https://portfolio.adobe.com/682518fb-db29-44f6-ae04-78cc66fc71cb/editor/university-projects-in-unity",
   },
   {
     id: "10",
@@ -112,6 +112,8 @@ const nodes = [
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 12.5 },
     title: "3D MODELLING",
     text: "I love stylized low poly art and handpainted textures! I either model all the assets i need myself, or get them online and customize them for quick prototypes.",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F11.jpg?alt=media&token=6bc00359-ea6a-4bb8-a0fb-9a8ad2160fc9",
   },
   {
     id: "12",
@@ -120,6 +122,8 @@ const nodes = [
     position: { x: mycenter + myXOffset * 6, y: myYOffset * 11 },
     title: "3D ANIMATION",
     text: "Although i don't do a lot of 3D animation anymore i know how to rig, weight paint, animate and how to use the right tools to get fast results.",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F12.jpg?alt=media&token=7537b07e-2b50-4865-8ff2-d8d588a73aee",
   },
 
   {
@@ -136,6 +140,8 @@ const nodes = [
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 17.3 },
     title: "AR",
     text: "AR is fascinating to me. You are still grounded in reality, it's widely used already and can be experienced and shared with others very easily.",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F14.jpg?alt=media&token=f558dbe5-44b4-448c-9bf0-66b790366b9c",
   },
   {
     id: "15",
@@ -182,6 +188,8 @@ const nodes = [
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 27.5 },
     title: "HTML/CSS",
     text: "Although i dabbled into HTML and CSS already in the past, i feel like i am now finally using it's full potential.",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F20.jpg?alt=media&token=0b642243-104b-41c9-9193-a7772058e6fa",
   },
   {
     id: "21",
@@ -191,6 +199,8 @@ const nodes = [
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 29 },
     title: "REACT / REACT NATIVE",
     text: "I'm lucky to have great friends that can teach me about react! It's so convenient and fun to design reusable components and beautiful web apps!",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F21.jpg?alt=media&token=a1ecb00f-ff5f-4323-afb6-76453e6d94b2",
   },
 
   {
@@ -251,6 +261,8 @@ const nodes = [
     position: { x: mycenter, y: myYOffset * 12.7 },
     title: "TEXTURING",
     text: "My Photoshop and drawing skills come in handy when i need to create textures for 3D Models!",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F28.jpg?alt=media&token=40655c47-6035-44fb-a822-54e13f59593f",
   },
   {
     id: "29",
@@ -259,6 +271,8 @@ const nodes = [
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 14 },
     title: "2D ANIMATION",
     text: "Little stop motion clips turned into gifs turned into frame-by-frame animations. To this day i love drawing animations by hand, but also use tools like spine.",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F29.jpg?alt=media&token=55510a62-e48c-4cab-ba0d-43115a501a13",
   },
   {
     id: "30",
@@ -266,8 +280,6 @@ const nodes = [
     position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 15.5 },
     title: "YOUTUBE",
     text: "2022 i started to upload videos of my projects more often to youtube, until i finally started doing tutorials on social AR! Planning to do more topics and tools soon.",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/storyPics%2Fmithorns.png?alt=media&token=0c5f8450-0af0-42ab-9425-33592960537e",
   },
   {
     id: "31",
@@ -285,6 +297,8 @@ const nodes = [
     position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 19 },
     title: "TEACHING",
     text: "It is so rewarding to see that my tutorials are helpful to people! I really like sharing my knowledge and want to lean more into teaching this year.",
+    imgLink:
+      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/storyPics%2Fmithorns.png?alt=media&token=0c5f8450-0af0-42ab-9425-33592960537e",
   },
   {
     id: "33",
