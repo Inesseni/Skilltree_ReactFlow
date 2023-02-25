@@ -35,7 +35,7 @@ export const ImageMobile = styled.img`
   width: 100%;
   margin: 0px 20px;
 `;
-*/ 
+*/
 
 export default function ID2_artClass({
   title,
@@ -50,11 +50,11 @@ export default function ID2_artClass({
       <MyTitle>{title}</MyTitle>
       <MyText>{description}</MyText>
       <MyLink href={link}>{linktext}</MyLink>
-            {/*<ImageMobile src={image} alt="" />*/}
-{ 
-      isMobile === true && (
-        <img style={{margin: "20px"}} src={image} alt="" opacity={opacity} />
-      )}
+      {
+        isMobile === true && (
+          <img style={{ margin: "20px" }} src={image} alt="" opacity={opacity} />
+        )
+      }
     </>
   );
 }

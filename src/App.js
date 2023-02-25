@@ -56,7 +56,7 @@ function App() {
   }, []);
 
   const entered = (event, node) => {
-    if (selected !== undefined) return;
+    if (isMobile || selected !== undefined) return;
     setHoveredNode(node.id)
   };
 
@@ -73,11 +73,12 @@ function App() {
           top: cursorPosition.y - 250,
           left: cursorPosition.x - 500,
         }}
+          opacity={selectedOrHoveredNode !== undefined ? 1 : 0}
           src={selectedOrHoveredNode !== undefined
             ? selectedOrHoveredNode.imgLink
             : undefined}
           alt=""
-          opacity={selectedOrHoveredNode !== undefined ? 1 : 0} />
+        />
       )}
       <Header>
         <MyH1 width={fontSizeH1}>SKILLTREE</MyH1>
@@ -87,14 +88,16 @@ function App() {
 
       <DescriptionWrapper mobile={isMobile}>
         {selectedOrHoveredNode !== undefined
-          ? <Description description={selectedOrHoveredNode.text} title={selectedOrHoveredNode.title} />
+          ? <Description
+            description={selectedOrHoveredNode.text}
+            title={selectedOrHoveredNode.title}
+            opacity={selectedOrHoveredNode !== undefined ? 1 : 0}
+            image={selectedOrHoveredNode !== undefined
+              ? selectedOrHoveredNode.imgLink
+              : undefined}
+          />
           : null
         }
-        { /*
-        {isMobile === false && (
-        <img src={myState.imageLink} alt="" opacity={opacity} />
-      )}
-         <img src={myState.nodesCopy[1].imgLink} alt="" /> */ }
       </DescriptionWrapper>
 
       <TreeWrapper>
@@ -115,8 +118,3 @@ function App() {
 }
 
 export default App;
-
-/**
-  //console.log({ name: 'onNodeMouseEnter', event, node } )
-  //console.log({node}.node.id);
-*/
