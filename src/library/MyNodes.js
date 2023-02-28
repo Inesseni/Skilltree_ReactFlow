@@ -9,9 +9,10 @@ const myYOffset = clamp(window.innerWidth / 0.2, 50, 70);
 const nodes = [
   {
     id: "0",
+    key: "node0",
     className: "first",
     type: "input",
-    data: { label: "start game in 1993", key: "node1" },
+    data: { label: "start game in 1993", key: "node0" },
     position: { x: mycenter - 20, y: 0 },
     title: "START",
     text: "Born and raised in bavaria!",
@@ -19,86 +20,96 @@ const nodes = [
   },
   {
     id: "1",
+    key: "node1",
     className: "first",
     type: "input",
-    data: { label: "start game in 1993", key: "node1" },
+    data: { label: "start game in 1993", key: "node1c" },
     position: { x: mycenter - 20, y: 0 },
     title: "START",
     text: "Born and raised in bavaria!",
     imgLink: require("./img/1.jpg"),
   },
+
   {
     id: "2",
+    key: "node2",
     data: { label: "art class", key: "node2" },
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 3 },
     title: "ART CLASS",
     text: "Art has always been my biggest strength. \n I was part of the Leistungskurs and participated in art competitions and travels to the Bienalle in Venice.",
-    imgLink: require("./img/2.jpg"),  
+    imgLink: require("./img/2.jpg"),
   },
   {
     id: "3",
+    key: "node3",
     data: { label: "gaming", key: "node3" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 3 },
     title: "GAMING",
     text: "My older brother would always give me CDs with cool games to play or i went to the local library to borrow them. Unreal tournament, Sacred, The Sims, Trackmania, Plants vs. Zombies, and many more.",
-    imgLink: require("./img/3.jpeg") },
+    imgLink: require("./img/3.jpeg")
+  },
 
   {
     id: "4",
+    key: "node4",
     type: "output",
     data: { label: "art & design basics", key: "node4" },
     position: { x: mycenter - myXOffset * 4, y: myYOffset * 5 },
     title: "ART & DESIGN BASICS",
     text: "I was lucky to have a great art teacher, she really sparked an interest in me about the old masters, modernism and color theory!",
-    imgLink: require("./img/4.jpg")},
+    imgLink: require("./img/4.jpg")
+  },
   {
     id: "5",
+    key: "node5",
     data: { label: "drawing", key: "node5" },
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 7 },
     title: "DRAWING",
     text: "When i was younger i was convinced: whenever i start a drawing, it turns into gold! Today i am more realistic about my art, but still get lost for hours drawing in the flow.",
-    imgLink: require("./img/5.jpg")},
+    imgLink: require("./img/5.jpg")
+  },
   {
     id: "6",
+    key: "node6",
     data: { label: "university", key: "node6" },
     position: { x: mycenter, y: myYOffset * 5 },
     title: "UNIVERSITY",
     text: "Following my passion for art and design, i studies Multimedia|VR-Design. I was fascinated by immersive media and wanted to teleport people into a different world!",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F6.jpg?alt=media&token=ad336b28-4324-49ec-87e9-3dca03d2b420",
+    imgLink: require("./img/6.jpg")
   },
 
   {
     id: "7",
+    key: "node7",
     data: { label: "game design", key: "node7" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 7 },
     title: "GAME DESIGN",
     text: "During my studies i focused on game design and XR. Interactive immersive media often requires our full attention and is therefore a great tool for education and fun! I think that's why i was always drawn to it.",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F7.JPG?alt=media&token=deed0448-8ce9-4614-9cee-a64730c096b2",
+    imgLink: require("./img/7.JPG")
   },
   {
     id: "8",
+    key: "node8",
     data: { label: "game art", key: "node8" },
     position: { x: mycenter, y: myYOffset * 9 },
     title: "GAME ART",
     text: "Can't get enough of making game art! First released game: Purry furry adventurry!",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F8.jpg?alt=media&token=2d36b2b3-d65d-4a51-95cd-f41da278ffb0",
+    imgLink: require("./img/8.jpg")
   },
 
   {
     id: "9",
+    key: "node9",
     data: { label: "Unity", key: "node9" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 14 },
     title: "UNITY",
     text: "When i started making games, i went to Unity classes at my university. Started out with PlayMaker, but soon switched to big-boy C# to make interactive 2D and 3D apps.",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F9.JPG?alt=media&token=3cb42e4a-ebc5-4e17-be3d-bad7e5aaf90c",
+    imgLink: require("./img/9.JPG"),
     link: "https://portfolio.adobe.com/682518fb-db29-44f6-ae04-78cc66fc71cb/editor/university-projects-in-unity",
   },
   {
     id: "10",
+    key: "node10",
     data: { label: "Blender", key: "node10" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 9 },
     title: "BLENDER",
@@ -107,27 +118,28 @@ const nodes = [
 
   {
     id: "11",
+    key: "node11",
     type: "output",
     data: { label: "3D Modelling", key: "node12" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 12.5 },
     title: "3D MODELLING",
     text: "I love stylized low poly art and handpainted textures! I either model all the assets i need myself, or get them online and customize them for quick prototypes.",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F11.jpg?alt=media&token=6bc00359-ea6a-4bb8-a0fb-9a8ad2160fc9",
+    imgLink: require("./img/11.jpg")
   },
   {
     id: "12",
+    key: "node12",
     type: "output",
     data: { label: "3D Animation", key: "node13" },
     position: { x: mycenter + myXOffset * 6, y: myYOffset * 11 },
     title: "3D ANIMATION",
     text: "Although i don't do a lot of 3D animation anymore i know how to rig, weight paint, animate and how to use the right tools to get fast results.",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F12.jpg?alt=media&token=7537b07e-2b50-4865-8ff2-d8d588a73aee",
+    imgLink: require("./img/12.jpg")
   },
 
   {
     id: "13",
+    key: "node13",
     type: "output",
     data: { label: "C#", key: "node14" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 16 },
@@ -136,15 +148,16 @@ const nodes = [
   },
   {
     id: "14",
+    key: "node14",
     data: { label: "AR", key: "node15" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 17.3 },
     title: "AR",
     text: "AR is fascinating to me. You are still grounded in reality, it's widely used already and can be experienced and shared with others very easily.",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F14.jpg?alt=media&token=f558dbe5-44b4-448c-9bf0-66b790366b9c",
+    imgLink: require("./img/14.jpg")
   },
   {
     id: "15",
+    key: "node15",
     data: { label: "VR", key: "node16" },
     position: { x: mycenter - myXOffset * 0, y: myYOffset * 16 },
     title: "VR",
@@ -153,6 +166,7 @@ const nodes = [
 
   {
     id: "16",
+    key: "node16",
     data: { label: "Social AR", key: "node17" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 19.3 },
     title: "SOCIAL AR",
@@ -160,6 +174,7 @@ const nodes = [
   },
   {
     id: "17",
+    key: "node17",
     data: { label: "JavaScript", key: "node18" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 20.5 },
     title: "JAVASCRIPT",
@@ -167,6 +182,7 @@ const nodes = [
   },
   {
     id: "18",
+    key: "node18",
     data: { label: "Front End", key: "node19" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 22.5 },
     title: "FRONT END",
@@ -175,6 +191,7 @@ const nodes = [
 
   {
     id: "19",
+    key: "node19",
     className: "loading",
     type: "output",
     data: { label: "Three.js", key: "node20" },
@@ -184,6 +201,7 @@ const nodes = [
   },
   {
     id: "20",
+    key: "node20",
     data: { label: "HTML / CSS", key: "node21" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 27.5 },
     title: "HTML/CSS",
@@ -193,6 +211,7 @@ const nodes = [
   },
   {
     id: "21",
+    key: "node21",
     className: "loading",
     type: "output",
     data: { label: "React (+Native)", key: "node22" },
@@ -205,6 +224,7 @@ const nodes = [
 
   {
     id: "22",
+    key: "node22",
     className: "loading",
     data: { label: "WebXR", key: "node23" },
     position: { x: mycenter - myXOffset * 0, y: myYOffset * 19.9 },
@@ -213,6 +233,7 @@ const nodes = [
   },
   {
     id: "23",
+    key: "node23",
     type: "output",
     data: { label: "GitHub", key: "node24" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 26.3 },
@@ -221,6 +242,7 @@ const nodes = [
   },
   {
     id: "24",
+    key: "node24",
     type: "output",
     data: { label: "Figma", key: "node25" },
     position: { x: mycenter + myXOffset * 5.5, y: myYOffset * 25 },
@@ -231,6 +253,7 @@ const nodes = [
   ///////////left path
   {
     id: "25",
+    key: "node25",
     data: { label: "photography", key: "node26" },
     position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 9 },
     title: "PHOTOGRAPHY",
@@ -240,6 +263,7 @@ const nodes = [
   },
   {
     id: "26",
+    key: "node26",
     data: { label: "video", key: "node27" },
     position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 12 },
     title: "VIDEO",
@@ -247,6 +271,7 @@ const nodes = [
   },
   {
     id: "27",
+    key: "node27",
     data: { label: "Photoshop", key: "node28" },
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 10.7 },
     title: "PHOTOSHOP",
@@ -257,25 +282,26 @@ const nodes = [
   },
   {
     id: "28",
+    key: "node28",
     data: { label: "Texturing", key: "node29" },
     position: { x: mycenter, y: myYOffset * 12.7 },
     title: "TEXTURING",
     text: "My Photoshop and drawing skills come in handy when i need to create textures for 3D Models!",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F28.jpg?alt=media&token=40655c47-6035-44fb-a822-54e13f59593f",
+    imgLink: require("./img/28.jpg")
   },
   {
     id: "29",
+    key: "node29",
     type: "output",
     data: { label: "2D Animation", key: "node30" },
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 14 },
     title: "2D ANIMATION",
     text: "Little stop motion clips turned into gifs turned into frame-by-frame animations. To this day i love drawing animations by hand, but also use tools like spine.",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F29.jpg?alt=media&token=55510a62-e48c-4cab-ba0d-43115a501a13",
+    imgLink: require("./img/29.jpg")
   },
   {
     id: "30",
+    key: "node30",
     data: { label: "Youtube", key: "node31" },
     position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 15.5 },
     title: "YOUTUBE",
@@ -283,6 +309,7 @@ const nodes = [
   },
   {
     id: "31",
+    key: "node31",
     data: { label: "Premiere / After effects", key: "node32" },
     position: { x: mycenter - myXOffset * 7, y: myYOffset * 14 },
     title: "PREMIERE / AFTER EFFECTS",
@@ -291,6 +318,7 @@ const nodes = [
 
   {
     id: "32",
+    key: "node32",
     className: "loading",
     type: "output",
     data: { label: "teaching", key: "node33" },
@@ -302,6 +330,7 @@ const nodes = [
   },
   {
     id: "33",
+    key: "node33",
     className: "loading",
     type: "output",
     data: { label: "video editing", key: "node34" },

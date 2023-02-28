@@ -63,6 +63,7 @@ export const MyText = styled.p`
   color: white;
 `;
 
+
 export const Image = styled.img`
   position: fixed;
   max-width: 700px;

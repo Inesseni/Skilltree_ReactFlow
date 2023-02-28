@@ -1,3 +1,9 @@
+/*
+TODO:
+- change mouse position thingy to CSS only
+- collect more images, compress and load them locally
+*/
+
 import ReactFlow from "reactflow";
 import React, { useState, useEffect } from "react";
 import "reactflow/dist/style.css";
@@ -19,6 +25,7 @@ import { isMobile } from "react-device-detect";
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 var fontSizeH1 = clamp(window.innerWidth / 10, 40, 600);
 
+
 function recursiveAnimateTitle(string) {
   let firstLetter = string[0];
   let title = document.querySelector("title");
@@ -37,11 +44,33 @@ function animateTitle(string) {
 
 animateTitle("SKILLTREE");
 
+function useMouse() {
+  const [mousePosition, setMousePosition] = useState({
+    x: null,
+    y: null
+  })
+
+  useEffect(() => {
+    function handle(e) {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
+      });
+    }
+
+    document.addEventListener("mousemove", handle)
+    return () => document.removeEventListener("mousemove", handle)
+  })
+  return mousePosition
+}
+
 function App() {
   const [selected, setSelected] = useState(undefined)
   const [hoveredNode, setHoveredNode] = useState(undefined)
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
+  const { x, y } = useMouse();
+
+  /*
   useEffect(() => {
     const handleMouseMove = (event) => {
       setCursorPosition({
@@ -54,6 +83,7 @@ function App() {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+  */
 
   const entered = (event, node) => {
     if (isMobile || selected !== undefined) return;
@@ -69,10 +99,11 @@ function App() {
   return (
     <MyStyledDiv>
       {isMobile === false && (
-        <Image style={{
-          top: cursorPosition.y - 250,
-          left: cursorPosition.x - 500,
-        }}
+        <Image
+          style={{
+            top: y,
+            left: x
+          }}
           opacity={selectedOrHoveredNode !== undefined ? 1 : 0}
           src={selectedOrHoveredNode !== undefined
             ? selectedOrHoveredNode.imgLink
@@ -111,6 +142,7 @@ function App() {
           onNodeMouseEnter={entered}
           onNodeMouseLeave={exit}
           onNodeClick={(_, node) => setSelected(node.id === selected ? undefined : node.id)}
+
         />
       </TreeWrapper>
     </MyStyledDiv>
