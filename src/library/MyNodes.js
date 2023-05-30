@@ -17,6 +17,7 @@ const nodes = [
     title: "START",
     text: "Born and raised in bavaria!",
     imgLink: require("./img/1b.jpg"),
+    margin: -300,
   },
   {
     id: "1",
@@ -28,6 +29,7 @@ const nodes = [
     title: "START",
     text: "Born and raised in bavaria",
     imgLink: require("./img/1b.jpg"),
+    margin: -300,
   },
 
   {
@@ -38,6 +40,7 @@ const nodes = [
     title: "ART CLASS",
     text: "Art has always been my biggest strength. \n I was part of the Leistungskurs and participated in art competitions and travels to the Bienalle in Venice.",
     imgLink: require("./img/2b.jpg"),
+    margin: -100,
   },
   {
     id: "3",
@@ -47,6 +50,7 @@ const nodes = [
     title: "GAMING",
     text: "My older brother would always give me CDs with games to play or i'd go to the local library to borrow them. This sparked a great interest in games and interactive media.",
     imgLink: require("./img/3.jpg"),
+    margin: -300,
   },
 
   {
@@ -58,6 +62,7 @@ const nodes = [
     title: "ART & DESIGN BASICS",
     text: "I was lucky to have a great art teacher who taught me about art genres and masterpieces and eventually pushed me to consider art and design as a career path.",
     imgLink: require("./img/4.jpg"),
+    margin: -80,
   },
   {
     id: "5",
@@ -67,6 +72,7 @@ const nodes = [
     title: "DRAWING",
     text: "I was drawing my whole life. It always felt naturally to me and i still enjoy sketching and documenting my day in little drawings.",
     imgLink: require("./img/5.jpg"),
+    margin: -150,
   },
   {
     id: "6",
@@ -78,6 +84,7 @@ const nodes = [
     imgLink: require("./img/6.jpg"),
     link: "https://portfolio.adobe.com/682518fb-db29-44f6-ae04-78cc66fc71cb/editor/university-projects-in-unity",
     linktext: "University Projects",
+    margin: -300,
   },
 
   {
@@ -90,6 +97,7 @@ const nodes = [
     imgLink: require("./img/7.JPG"),
     link: "https://ineshilz.myportfolio.com/vr-platformer-game-prototype",
     linktext: "ENERWARS: VR Platformer Prototype",
+    margin: -270,
   },
   {
     id: "8",
@@ -101,6 +109,7 @@ const nodes = [
     imgLink: require("./img/8.jpg"),
     link: "https://ineshilz.myportfolio.com/crappy-cat-game",
     linktext: "Purry furry Adventurry on steam",
+    margin: -270,
   },
 
   {
@@ -113,6 +122,7 @@ const nodes = [
     imgLink: require("./img/9.JPG"),
     link: "https://portfolio.adobe.com/682518fb-db29-44f6-ae04-78cc66fc71cb/editor/university-projects-in-unity",
     linktext: "University Projects",
+    margin: -270,
   },
   {
     id: "10",
@@ -122,6 +132,7 @@ const nodes = [
     title: "BLENDER",
     text: "I use Blender almost every day to quickly create prototype assets for 3D applications, stylized low poly game assets and animations.",
     imgLink: require("./img/10.jpg"),
+    margin: -270,
   },
 
   {
@@ -133,6 +144,7 @@ const nodes = [
     title: "3D MODELLING",
     text: "I love stylized low poly art and handpainted textures! I either model all the assets i need myself, or get them online and customize them for quick prototypes.",
     imgLink: require("./img/11.jpg"),
+    margin: -100,
   },
   {
     id: "12",
@@ -143,6 +155,7 @@ const nodes = [
     title: "3D ANIMATION",
     text: "Although i don't do a lot of 3D animation anymore i know how to rig, weight paint, animate and how to use the right tools to get fast results.",
     imgLink: require("./img/12.jpg"),
+    margin: -150,
   },
 
   {
@@ -154,6 +167,7 @@ const nodes = [
     title: "C#",
     text: "Although i initially hated programming and tried to find a way around it, i totally fell in love with it with the help of great mentors and a lot of game jams!",
     imgLink: require("./img/13.png"),
+    margin: -270,
   },
   {
     id: "14",
@@ -165,6 +179,7 @@ const nodes = [
     imgLink: require("./img/14.jpg"),
     link: "https://ineshilz.myportfolio.com/ar",
     linktext: "View AR projects",
+    margin: -130,
   },
   {
     id: "15",
@@ -176,6 +191,7 @@ const nodes = [
     imgLink: require("./img/15.png"),
     link: "https://ineshilz.myportfolio.com/vr",
     linktext: "View VR projects",
+    margin: -150,
   },
 
   {
@@ -188,6 +204,7 @@ const nodes = [
     imgLink: require("./img/16.jpg"),
     link: "https://lensstudio.snapchat.com/creator/F1cYXucDAIl9uze0JG0RmA",
     linktext: "View Snapchat portfolio",
+    margin: -50,
   },
   {
     id: "17",
@@ -197,6 +214,7 @@ const nodes = [
     title: "JAVASCRIPT",
     text: "In 2021 i started to learn a lot about JavaScript, since all the AR software i used for social AR is based on it.",
     imgLink: require("./img/17.png"),
+    margin: -150,
   },
   {
     id: "18",
@@ -207,7 +225,8 @@ const nodes = [
     text: "Encouraged by my coding progress and the search for a challenge, i started to get more into web & app development and built my first little web tools and websites!",
     imgLink: require("./img/18.jpg"),
     link: "https://ineshilz.myportfolio.com/front-end-development",
-    linktext: "View Front-End projects",
+    linktext: "VIEW FRONT END PROJECTS",
+    margin: -300,
   },
 
   {
@@ -220,6 +239,7 @@ const nodes = [
     title: "THREE.JS",
     text: "I am probably learning something new about three.js while you are reading this. I love seeing creative use of 3D in web and want to make beautiful interactive websites.",
     imgLink: require("./img/19.jpg"),
+    margin: -250,
   },
   {
     id: "20",
@@ -229,6 +249,7 @@ const nodes = [
     title: "HTML/CSS",
     text: "I occasionally used HTML and CSS in the past. Now i am able to combine it with Javascript and use it to it's full potential.",
     imgLink: require("./img/20.jpg"),
+    margin: -250,
   },
   {
     id: "21",
@@ -240,6 +261,7 @@ const nodes = [
     title: "REACT / REACT NATIVE",
     text: "I'm lucky to have great friends that can teach me about react! It's so convenient and fun to design reusable components and beautiful web apps!",
     imgLink: require("./img/21.jpg"),
+    margin: -200,
   },
   /*
   {
@@ -258,10 +280,11 @@ const nodes = [
     data: { label: "GitHub", key: "node24" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 25 },
     title: "GITHUB",
-    text: "I learned to love GitHub .. the hard way. Source control is super important no matter how big the project is.",
+    text: "I learned to love GitHub .. the hard way. Source control is super important no matter how small the project is.",
     imgLink: require("./img/23.jpg"),
     link: "https://github.com/Inesseni",
     linktext: "My GitHub",
+    margin: -100,
   },
   /*
   {
@@ -283,6 +306,7 @@ const nodes = [
     title: "PHOTOGRAPHY",
     text: "Taking photos has been a way to document the world and myself, and was a big part of my creative experiments and expressions during my teenage years.",
     imgLink: require("./img/25.jpg"),
+    margin: -200,
   },
   {
     id: "26",
@@ -293,6 +317,7 @@ const nodes = [
     text: "In the age of social media i mostly use video to document my projects and post about my progress online.",
     link: "https://www.instagram.com/inidewin_/",
     linktext: "My Instagram account",
+    margin: -450,
   },
   {
     id: "27",
@@ -302,6 +327,7 @@ const nodes = [
     title: "PHOTOSHOP",
     text: "Photoshop was one of the first tools i used to alter my photos and create digital art. Today i mostly use it to create and edit 2D assets for my projects.",
     imgLink: require("./img/27b.jpg"),
+    margin: -250,
   },
   {
     id: "28",
@@ -311,6 +337,7 @@ const nodes = [
     title: "TEXTURING",
     text: "My Photoshop and drawing skills come in handy when i need to create textures for 3D Models!",
     imgLink: require("./img/28.jpg"),
+    margin: -120,
   },
   {
     id: "29",
@@ -321,6 +348,7 @@ const nodes = [
     title: "2D ANIMATION",
     text: "Little stop motion clips turned into gifs turned into frame-by-frame animations. To this day i love drawing animations by hand.",
     imgLink: require("./img/29.jpg"),
+    margin: -150,
   },
   {
     id: "30",
@@ -332,6 +360,7 @@ const nodes = [
     imgLink: require("./img/30.jpg"),
     link: "https://www.youtube.com/@ineshilz/featured",
     linktext: "My YouTube channel",
+    margin: -200,
   },
   {
     id: "31",
@@ -341,6 +370,7 @@ const nodes = [
     title: "PREMIERE / AFTER EFFECTS",
     text: "While i first edited all of my videos on the phone, i eventually switched to Premiere Pro and After Effects to level up my editing skills.",
     imgLink: require("./img/31.png"),
+    margin: -300,
   },
 
   {
@@ -355,6 +385,7 @@ const nodes = [
     imgLink: require("./img/32.png"),
     link: "https://www.youtube.com/playlist?list=PLQ4NDgEDy3Uku7KOwBORu-EuF7rtKAhVS",
     linktext: "AR tutorials playlist",
+    margin: -280,
   },
   {
     id: "33",
@@ -366,6 +397,7 @@ const nodes = [
     title: "VIDEO EDITING",
     text: "I try to improve my video quality with every new video. Engaging and fun editing that keeps people hooked is something i want to get better at!",
     imgLink: require("./img/33.jpg"),
+    margin: -200,
   },
 ];
 

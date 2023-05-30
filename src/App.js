@@ -20,13 +20,13 @@ import {
   Image,
 } from "./library/MyStyledComponents";
 import Description from "./components/Description";
-import SlideUpPanel from "./components/SlideUpPanel";
 import SlideUp from "./components/SlideUp";
 import { isMobile } from "react-device-detect";
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 var fontSizeH1 = clamp(window.innerWidth / 10, 40, 600);
 var sthSelected = false;
+var slideShown = false;
 
 function recursiveAnimateTitle(string) {
   let firstLetter = string[0];
@@ -69,30 +69,10 @@ function useMouse() {
 function App() {
   const [selected, setSelected] = useState(undefined);
   const [hoveredNode, setHoveredNode] = useState(undefined);
-  const [startAnimation, setStartAnimation] = useState(false);
+  const [slideMargin, setSlideMargin] = useState(-700);
 
   const { x, y } = useMouse();
 
-  /*
-  useEffect(() => {
-    const handleMouseMove = (event) => {
-      setCursorPosition({
-        x: event.clientX,
-        y: event.clientY,
-      });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
- 
-
-  useEffect(() => {
-    console.log("test test");
-    setStartAnimation(node.id === selected ? startAnimation : !startAnimation);
-  }, [sthSelected]);
- */
   const entered = (event, node) => {
     if (isMobile || selected !== undefined) return;
     setHoveredNode(node.id);
@@ -101,6 +81,16 @@ function App() {
   const exit = (event, node) => {
     setHoveredNode(undefined);
   };
+  useEffect(() => {
+    //console.log("changed");
+    if (slideShown) {
+      setSlideMargin(
+        selectedOrHoveredNode !== undefined
+          ? selectedOrHoveredNode.margin
+          : null
+      );
+    }
+  }, [selected]);
 
   const selectedOrHoveredNode = MyNodes.find(
     (n) => n.id === (selected ?? hoveredNode ?? -1)
@@ -162,20 +152,44 @@ function App() {
             setSelected(node.id === selected ? undefined : node.id);
 
             if (node.id !== selected && sthSelected === false) {
-              setStartAnimation(true);
-              console.log("selected");
+              setSlideMargin(-650);
+              //console.log("selected");
               sthSelected = true;
             } else if (node.id === selected) {
-              setStartAnimation(false);
-              console.log("un-selected");
+              setSlideMargin(-700);
+              //console.log("un-selected");
               sthSelected = false;
             }
           }}
         />
       </TreeWrapper>
-      <SlideUp startAnimation={startAnimation}>
-        <SlideUpPanel />
-      </SlideUp>
+      {isMobile === true && (
+        <>
+          {selectedOrHoveredNode !== undefined ? (
+            <SlideUp
+              myMargin={slideMargin}
+              onclick={() => {
+                if (slideShown) {
+                  slideShown = false;
+                  setSlideMargin(-650);
+                } else {
+                  slideShown = true;
+                  setSlideMargin(selectedOrHoveredNode.margin);
+                }
+              }}
+              title={selectedOrHoveredNode.title}
+              description={selectedOrHoveredNode.text}
+              image={
+                selectedOrHoveredNode !== undefined
+                  ? selectedOrHoveredNode.imgLink
+                  : undefined
+              }
+              link={selectedOrHoveredNode.link}
+              linktext={selectedOrHoveredNode.linktext}
+            ></SlideUp>
+          ) : null}
+        </>
+      )}
     </MyStyledDiv>
   );
 }

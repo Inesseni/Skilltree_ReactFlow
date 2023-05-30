@@ -38,23 +38,17 @@ export const ImageMobile = styled.img`
 `;
 */
 
-export default function ID2_artClass({
-  title,
-  description,
-  link,
-  linktext,
-  image,
-  opacity,
-}) {
+export default function ID2_artClass({ title, description, link, linktext }) {
   return (
     <>
-      <MyTitle>{title}</MyTitle>
-      <MyText>{description}</MyText>
-      <MyLink target="_blank" href={link}>
-        {linktext}
-      </MyLink>
-      {isMobile === true && (
-        <img style={{ margin: "20px" }} src={image} alt="" opacity={opacity} />
+      {isMobile === false && (
+        <>
+          <MyTitle>{title}</MyTitle>
+          <MyText>{description}</MyText>
+          <MyLink target="_blank" href={link}>
+            {linktext}
+          </MyLink>
+        </>
       )}
     </>
   );
