@@ -20,10 +20,13 @@ import {
   Image,
 } from "./library/MyStyledComponents";
 import Description from "./components/Description";
+import SlideUpPanel from "./components/SlideUpPanel";
+import SlideUp from "./components/SlideUp";
 import { isMobile } from "react-device-detect";
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 var fontSizeH1 = clamp(window.innerWidth / 10, 40, 600);
+var sthSelected = false;
 
 function recursiveAnimateTitle(string) {
   let firstLetter = string[0];
@@ -66,6 +69,7 @@ function useMouse() {
 function App() {
   const [selected, setSelected] = useState(undefined);
   const [hoveredNode, setHoveredNode] = useState(undefined);
+  const [startAnimation, setStartAnimation] = useState(false);
 
   const { x, y } = useMouse();
 
@@ -82,8 +86,13 @@ function App() {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
-  */
+ 
 
+  useEffect(() => {
+    console.log("test test");
+    setStartAnimation(node.id === selected ? startAnimation : !startAnimation);
+  }, [sthSelected]);
+ */
   const entered = (event, node) => {
     if (isMobile || selected !== undefined) return;
     setHoveredNode(node.id);
@@ -99,19 +108,21 @@ function App() {
   return (
     <MyStyledDiv>
       {isMobile === false && (
-        <Image
-          style={{
-            top: y,
-            left: x,
-          }}
-          opacity={selectedOrHoveredNode !== undefined ? 1 : 0}
-          src={
-            selectedOrHoveredNode !== undefined
-              ? selectedOrHoveredNode.imgLink
-              : undefined
-          }
-          alt=""
-        />
+        <>
+          <Image
+            style={{
+              top: y,
+              left: x,
+            }}
+            opacity={selectedOrHoveredNode !== undefined ? 1 : 0}
+            src={
+              selectedOrHoveredNode !== undefined
+                ? selectedOrHoveredNode.imgLink
+                : undefined
+            }
+            alt=""
+          />
+        </>
       )}
       <Header>
         <MyH1 width={fontSizeH1}>SKILLTREE</MyH1>
@@ -141,19 +152,30 @@ function App() {
             n.id === selected ? { ...n, selected: true } : n
           )}
           edges={MyEdges}
-          elevateEdgesOnSelect={false}
-          edgesFocusable={false}
           panOnDrag={false}
           panOnScroll={false}
           preventScrolling={false}
           nodesDraggable={false}
           onNodeMouseEnter={entered}
           onNodeMouseLeave={exit}
-          onNodeClick={(_, node) =>
-            setSelected(node.id === selected ? undefined : node.id)
-          }
+          onNodeClick={(_, node) => {
+            setSelected(node.id === selected ? undefined : node.id);
+
+            if (node.id !== selected && sthSelected === false) {
+              setStartAnimation(true);
+              console.log("selected");
+              sthSelected = true;
+            } else if (node.id === selected) {
+              setStartAnimation(false);
+              console.log("un-selected");
+              sthSelected = false;
+            }
+          }}
         />
       </TreeWrapper>
+      <SlideUp startAnimation={startAnimation}>
+        <SlideUpPanel />
+      </SlideUp>
     </MyStyledDiv>
   );
 }
