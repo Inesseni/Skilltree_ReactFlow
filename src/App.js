@@ -25,7 +25,6 @@ import { isMobile } from "react-device-detect";
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 var fontSizeH1 = clamp(window.innerWidth / 10, 40, 600);
 
-
 function recursiveAnimateTitle(string) {
   let firstLetter = string[0];
   let title = document.querySelector("title");
@@ -47,26 +46,26 @@ animateTitle("SKILLTREE");
 function useMouse() {
   const [mousePosition, setMousePosition] = useState({
     x: null,
-    y: null
-  })
+    y: null,
+  });
 
   useEffect(() => {
     function handle(e) {
       setMousePosition({
         x: e.clientX,
-        y: e.clientY
+        y: e.clientY,
       });
     }
 
-    document.addEventListener("mousemove", handle)
-    return () => document.removeEventListener("mousemove", handle)
-  })
-  return mousePosition
+    document.addEventListener("mousemove", handle);
+    return () => document.removeEventListener("mousemove", handle);
+  });
+  return mousePosition;
 }
 
 function App() {
-  const [selected, setSelected] = useState(undefined)
-  const [hoveredNode, setHoveredNode] = useState(undefined)
+  const [selected, setSelected] = useState(undefined);
+  const [hoveredNode, setHoveredNode] = useState(undefined);
 
   const { x, y } = useMouse();
 
@@ -87,62 +86,72 @@ function App() {
 
   const entered = (event, node) => {
     if (isMobile || selected !== undefined) return;
-    setHoveredNode(node.id)
+    setHoveredNode(node.id);
   };
-
 
   const exit = (event, node) => {
-    setHoveredNode(undefined)
+    setHoveredNode(undefined);
   };
 
-  const selectedOrHoveredNode = MyNodes.find((n) => n.id === (selected ?? hoveredNode ?? -1))
+  const selectedOrHoveredNode = MyNodes.find(
+    (n) => n.id === (selected ?? hoveredNode ?? -1)
+  );
   return (
     <MyStyledDiv>
       {isMobile === false && (
         <Image
           style={{
             top: y,
-            left: x
+            left: x,
           }}
           opacity={selectedOrHoveredNode !== undefined ? 1 : 0}
-          src={selectedOrHoveredNode !== undefined
-            ? selectedOrHoveredNode.imgLink
-            : undefined}
+          src={
+            selectedOrHoveredNode !== undefined
+              ? selectedOrHoveredNode.imgLink
+              : undefined
+          }
           alt=""
         />
       )}
       <Header>
         <MyH1 width={fontSizeH1}>SKILLTREE</MyH1>
         <MyH2>Ines Hilz</MyH2>
-
       </Header>
 
       <DescriptionWrapper mobile={isMobile}>
-        {selectedOrHoveredNode !== undefined
-          ? <Description
+        {selectedOrHoveredNode !== undefined ? (
+          <Description
             description={selectedOrHoveredNode.text}
             title={selectedOrHoveredNode.title}
             opacity={selectedOrHoveredNode !== undefined ? 1 : 0}
-            image={selectedOrHoveredNode !== undefined
-              ? selectedOrHoveredNode.imgLink
-              : undefined}
+            image={
+              selectedOrHoveredNode !== undefined
+                ? selectedOrHoveredNode.imgLink
+                : undefined
+            }
+            link={selectedOrHoveredNode.link}
+            linktext={selectedOrHoveredNode.linktext}
           />
-          : null
-        }
+        ) : null}
       </DescriptionWrapper>
 
       <TreeWrapper>
         <ReactFlow
-          nodes={MyNodes.map((n) => n.id === selected ? { ...n, selected: true } : n)}
+          nodes={MyNodes.map((n) =>
+            n.id === selected ? { ...n, selected: true } : n
+          )}
           edges={MyEdges}
+          elevateEdgesOnSelect={false}
+          edgesFocusable={false}
           panOnDrag={false}
           panOnScroll={false}
           preventScrolling={false}
           nodesDraggable={false}
           onNodeMouseEnter={entered}
           onNodeMouseLeave={exit}
-          onNodeClick={(_, node) => setSelected(node.id === selected ? undefined : node.id)}
-
+          onNodeClick={(_, node) =>
+            setSelected(node.id === selected ? undefined : node.id)
+          }
         />
       </TreeWrapper>
     </MyStyledDiv>

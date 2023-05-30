@@ -1,7 +1,15 @@
 const edges = [
   //ines skilltree
-  { source: "1", target: "2", key: "edge1_2" },
-  { source: "1", target: "3", key: "edge2_3" },
+  {
+    source: "1",
+    target: "2",
+    key: "edge1_2",
+  },
+  {
+    source: "1",
+    target: "3",
+    key: "edge2_3",
+  },
 
   //art class
   { source: "2", target: "4", key: "edge2_4" },
@@ -58,14 +66,14 @@ const edges = [
 
   ///VR
   // { source: '16', target: '19', key: 'edge16_19'},
-  { source: "15", target: "22", key: "edge16_23" },
-  { source: "22", target: "19", key: "edge16_23" },
+  { source: "15", target: "19", key: "edge16_23" },
+  //{ source: "22", target: "19", key: "edge16_23" }, ::: webXR
 
   //Javascript
   { source: "17", target: "18", key: "edge19_20" },
 
   //FrontEnd
-  { source: "18", target: "24", key: "edge19_21" },
+  //{ source: "18", target: "24", key: "edge19_21" }, ::: Figma
   { source: "18", target: "20", key: "edge19_24" },
   { source: "18", target: "23", key: "edge19_25" },
   { source: "20", target: "21", key: "edge21_22" },

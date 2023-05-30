@@ -25,6 +25,7 @@ const MyLink = styled.a`
   font-size: 15px;
   color: white;
   cursor: pointer;
+  padding: 0px 20px;
 `;
 
 /*
@@ -49,12 +50,12 @@ export default function ID2_artClass({
     <>
       <MyTitle>{title}</MyTitle>
       <MyText>{description}</MyText>
-      <MyLink href={link}>{linktext}</MyLink>
-      {
-        isMobile === true && (
-          <img style={{ margin: "20px" }} src={image} alt="" opacity={opacity} />
-        )
-      }
+      <MyLink target="_blank" href={link}>
+        {linktext}
+      </MyLink>
+      {isMobile === true && (
+        <img style={{ margin: "20px" }} src={image} alt="" opacity={opacity} />
+      )}
     </>
   );
 }

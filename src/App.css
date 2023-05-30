@@ -1,5 +1,4 @@
 *,
-
 .react-flow__input,
 .react-flow__output,
 .react-flow__edge {
@@ -9,9 +8,11 @@
 .react-flow__edge-path,
 .react-flow__connection-path {
   stroke-width: 2;
-  stroke: rgba(255, 255, 255, 1);
+  stroke: rgb(255, 255, 255);
 }
-
+.react-flow__edge {
+  pointer-events: none;
+}
 .react-flow__edge-path.selected,
 .react-flow__connection-path.selected {
   stroke-width: 2;
@@ -24,7 +25,7 @@
 }
 
 .react-flow__node {
-  border: 0px solid black;
+  border: 0px solid rgb(255, 255, 255);
   background-color: rgb(85, 85, 85);
   color: white;
   cursor: default;
@@ -33,31 +34,36 @@
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 20px;
-  transition: all .2s ease-in-out;
-  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .2);
-
+  transition: all 0.2s ease-in-out;
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0.2);
 }
 
 .react-flow__node.selected {
   background-color: white;
+  border: 0px solid black;
   color: rgba(85, 85, 85, 1);
-  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .0);
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0);
 }
 
 .react-flow__node.loading {
-  background: linear-gradient(to left,
-      rgba(85, 85, 85, 1) 0px, rgba(85, 85, 85, 0.5) 50px);
+  background: linear-gradient(
+    to left,
+    rgba(85, 85, 85, 1) 0px,
+    rgba(85, 85, 85, 0.5) 50px
+  );
   background-size: 100px 30px;
   animation: animate-stripes 3s linear infinite;
 }
 
 .react-flow__node.loading.selected {
-  background: linear-gradient(to left,
-      rgb(243, 243, 243) 0px, rgba(255, 255, 255, 0.5) 100px);
+  background: linear-gradient(
+    to left,
+    rgb(243, 243, 243) 0px,
+    rgba(255, 255, 255, 0.5) 100px
+  );
   color: rgba(85, 85, 85, 1);
   background-size: 100px 30px;
 }
-
 
 .react-flow__node.first {
   border-radius: 40px;
@@ -65,15 +71,14 @@
   width: 120px;
   font-size: medium;
   opacity: 1;
-  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .2);
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0.2);
 }
 
 .react-flow__node.first:hover {
   background-color: white;
   color: rgba(85, 85, 85, 1);
-  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, .0);
+  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0);
 }
-
 
 @keyframes animate-stripes {
   from {
@@ -90,7 +95,6 @@
   background: rgb(255, 255, 255);
   color: rgb(49, 49, 49);
 }
-
 
 .react-flow__handle {
   opacity: 0;

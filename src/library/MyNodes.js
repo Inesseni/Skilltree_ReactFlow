@@ -16,7 +16,7 @@ const nodes = [
     position: { x: mycenter - 20, y: 0 },
     title: "START",
     text: "Born and raised in bavaria!",
-    imgLink: require("./img/1.jpg"),
+    imgLink: require("./img/1b.jpg"),
   },
   {
     id: "1",
@@ -26,8 +26,8 @@ const nodes = [
     data: { label: "start game in 1993", key: "node1c" },
     position: { x: mycenter - 20, y: 0 },
     title: "START",
-    text: "Born and raised in bavaria!",
-    imgLink: require("./img/1.jpg"),
+    text: "Born and raised in bavaria",
+    imgLink: require("./img/1b.jpg"),
   },
 
   {
@@ -37,7 +37,7 @@ const nodes = [
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 3 },
     title: "ART CLASS",
     text: "Art has always been my biggest strength. \n I was part of the Leistungskurs and participated in art competitions and travels to the Bienalle in Venice.",
-    imgLink: require("./img/2.jpg"),
+    imgLink: require("./img/2b.jpg"),
   },
   {
     id: "3",
@@ -45,8 +45,8 @@ const nodes = [
     data: { label: "gaming", key: "node3" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 3 },
     title: "GAMING",
-    text: "My older brother would always give me CDs with cool games to play or i went to the local library to borrow them. Unreal tournament, Sacred, The Sims, Trackmania, Plants vs. Zombies, and many more.",
-    imgLink: require("./img/3.jpeg")
+    text: "My older brother would always give me CDs with games to play or i'd go to the local library to borrow them. This sparked a great interest in games and interactive media.",
+    imgLink: require("./img/3.jpg"),
   },
 
   {
@@ -56,8 +56,8 @@ const nodes = [
     data: { label: "art & design basics", key: "node4" },
     position: { x: mycenter - myXOffset * 4, y: myYOffset * 5 },
     title: "ART & DESIGN BASICS",
-    text: "I was lucky to have a great art teacher, she really sparked an interest in me about the old masters, modernism and color theory!",
-    imgLink: require("./img/4.jpg")
+    text: "I was lucky to have a great art teacher who taught me about art genres and masterpieces and eventually pushed me to consider art and design as a career path.",
+    imgLink: require("./img/4.jpg"),
   },
   {
     id: "5",
@@ -65,8 +65,8 @@ const nodes = [
     data: { label: "drawing", key: "node5" },
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 7 },
     title: "DRAWING",
-    text: "When i was younger i was convinced: whenever i start a drawing, it turns into gold! Today i am more realistic about my art, but still get lost for hours drawing in the flow.",
-    imgLink: require("./img/5.jpg")
+    text: "I was drawing my whole life. It always felt naturally to me and i still enjoy sketching and documenting my day in little drawings.",
+    imgLink: require("./img/5.jpg"),
   },
   {
     id: "6",
@@ -75,7 +75,9 @@ const nodes = [
     position: { x: mycenter, y: myYOffset * 5 },
     title: "UNIVERSITY",
     text: "Following my passion for art and design, i studies Multimedia|VR-Design. I was fascinated by immersive media and wanted to teleport people into a different world!",
-    imgLink: require("./img/6.jpg")
+    imgLink: require("./img/6.jpg"),
+    link: "https://portfolio.adobe.com/682518fb-db29-44f6-ae04-78cc66fc71cb/editor/university-projects-in-unity",
+    linktext: "University Projects",
   },
 
   {
@@ -85,7 +87,9 @@ const nodes = [
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 7 },
     title: "GAME DESIGN",
     text: "During my studies i focused on game design and XR. Interactive immersive media often requires our full attention and is therefore a great tool for education and fun! I think that's why i was always drawn to it.",
-    imgLink: require("./img/7.JPG")
+    imgLink: require("./img/7.JPG"),
+    link: "https://ineshilz.myportfolio.com/vr-platformer-game-prototype",
+    linktext: "ENERWARS: VR Platformer Prototype",
   },
   {
     id: "8",
@@ -93,8 +97,10 @@ const nodes = [
     data: { label: "game art", key: "node8" },
     position: { x: mycenter, y: myYOffset * 9 },
     title: "GAME ART",
-    text: "Can't get enough of making game art! First released game: Purry furry adventurry!",
-    imgLink: require("./img/8.jpg")
+    text: "2021 i released my first official game on steam! I collaborated with Robin Gerndt who did the programming in Unreal engine and the composed the soundtrack. I drew all the game assets and frame-by-frame animations.",
+    imgLink: require("./img/8.jpg"),
+    link: "https://ineshilz.myportfolio.com/crappy-cat-game",
+    linktext: "Purry furry Adventurry on steam",
   },
 
   {
@@ -103,9 +109,10 @@ const nodes = [
     data: { label: "Unity", key: "node9" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 14 },
     title: "UNITY",
-    text: "When i started making games, i went to Unity classes at my university. Started out with PlayMaker, but soon switched to big-boy C# to make interactive 2D and 3D apps.",
+    text: "I started making games in 2018 with Unity PlayMaker, since i didn't know anything about programming at first. Pretty quickly i switched to C# to make interactive 2D and 3D apps.",
     imgLink: require("./img/9.JPG"),
     link: "https://portfolio.adobe.com/682518fb-db29-44f6-ae04-78cc66fc71cb/editor/university-projects-in-unity",
+    linktext: "University Projects",
   },
   {
     id: "10",
@@ -113,7 +120,8 @@ const nodes = [
     data: { label: "Blender", key: "node10" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 9 },
     title: "BLENDER",
-    text: "I use Blender almost every day. Quickly modeling prototype assets for a new 3D application or stylized low poly game assets and animations, Blender is my baby.",
+    text: "I use Blender almost every day to quickly create prototype assets for 3D applications, stylized low poly game assets and animations.",
+    imgLink: require("./img/10.jpg"),
   },
 
   {
@@ -124,7 +132,7 @@ const nodes = [
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 12.5 },
     title: "3D MODELLING",
     text: "I love stylized low poly art and handpainted textures! I either model all the assets i need myself, or get them online and customize them for quick prototypes.",
-    imgLink: require("./img/11.jpg")
+    imgLink: require("./img/11.jpg"),
   },
   {
     id: "12",
@@ -134,7 +142,7 @@ const nodes = [
     position: { x: mycenter + myXOffset * 6, y: myYOffset * 11 },
     title: "3D ANIMATION",
     text: "Although i don't do a lot of 3D animation anymore i know how to rig, weight paint, animate and how to use the right tools to get fast results.",
-    imgLink: require("./img/12.jpg")
+    imgLink: require("./img/12.jpg"),
   },
 
   {
@@ -144,7 +152,8 @@ const nodes = [
     data: { label: "C#", key: "node14" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 16 },
     title: "C#",
-    text: "Although i initially hated programming and tried to find a way around it, i loved it at the end of my studies with the help of great mentors and by doing game jams!",
+    text: "Although i initially hated programming and tried to find a way around it, i totally fell in love with it with the help of great mentors and a lot of game jams!",
+    imgLink: require("./img/13.png"),
   },
   {
     id: "14",
@@ -152,8 +161,10 @@ const nodes = [
     data: { label: "AR", key: "node15" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 17.3 },
     title: "AR",
-    text: "AR is fascinating to me. You are still grounded in reality, it's widely used already and can be experienced and shared with others very easily.",
-    imgLink: require("./img/14.jpg")
+    text: "Most of my work is in AR these days. It has so much potential, is widely used already and can be experienced and shared with others very easily.",
+    imgLink: require("./img/14.jpg"),
+    link: "https://ineshilz.myportfolio.com/ar",
+    linktext: "View AR projects",
   },
   {
     id: "15",
@@ -161,7 +172,10 @@ const nodes = [
     data: { label: "VR", key: "node16" },
     position: { x: mycenter - myXOffset * 0, y: myYOffset * 16 },
     title: "VR",
-    text: "I still want to teleport people! It's so much fun to create truly immersive worlds and see others experience it with awe! So happy i get to build VR apps as a freelancer now.",
+    text: "VR is still one of the most interesting technologies for me. The possibility to tranport the players/users into different world and immerse them in a story is super fascinating.",
+    imgLink: require("./img/15.png"),
+    link: "https://ineshilz.myportfolio.com/vr",
+    linktext: "View VR projects",
   },
 
   {
@@ -171,6 +185,9 @@ const nodes = [
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 19.3 },
     title: "SOCIAL AR",
     text: "After my studies i started to make AR effects for social media like Instagram and Snapchat! I love how accesible it is for everyone and that people have lot of fun with it!",
+    imgLink: require("./img/16.jpg"),
+    link: "https://lensstudio.snapchat.com/creator/F1cYXucDAIl9uze0JG0RmA",
+    linktext: "View Snapchat portfolio",
   },
   {
     id: "17",
@@ -178,7 +195,8 @@ const nodes = [
     data: { label: "JavaScript", key: "node18" },
     position: { x: mycenter + myXOffset * 4, y: myYOffset * 20.5 },
     title: "JAVASCRIPT",
-    text: "In 2021 i started to learn a lot about JavaScript, since all the AR software i used for social AR is based on it. And it led me deeper into my programming adventures!",
+    text: "In 2021 i started to learn a lot about JavaScript, since all the AR software i used for social AR is based on it.",
+    imgLink: require("./img/17.png"),
   },
   {
     id: "18",
@@ -186,7 +204,10 @@ const nodes = [
     data: { label: "Front End", key: "node19" },
     position: { x: mycenter + myXOffset * 2, y: myYOffset * 22.5 },
     title: "FRONT END",
-    text: "Encouraged by my coding progress and curiosity, i started to get more into web & app development and built my first little web tools and websites!",
+    text: "Encouraged by my coding progress and the search for a challenge, i started to get more into web & app development and built my first little web tools and websites!",
+    imgLink: require("./img/18.jpg"),
+    link: "https://ineshilz.myportfolio.com/front-end-development",
+    linktext: "View Front-End projects",
   },
 
   {
@@ -197,17 +218,17 @@ const nodes = [
     data: { label: "Three.js", key: "node20" },
     position: { x: mycenter - myXOffset * 0, y: myYOffset * 25 },
     title: "THREE.JS",
-    text: "Most interesting for me is Three.js at this point. I love seeing creative use of 3D in web and want to make beautiful interactive websites myself, accessible for all!",
+    text: "I am probably learning something new about three.js while you are reading this. I love seeing creative use of 3D in web and want to make beautiful interactive websites.",
+    imgLink: require("./img/19.jpg"),
   },
   {
     id: "20",
     key: "node20",
     data: { label: "HTML / CSS", key: "node21" },
-    position: { x: mycenter + myXOffset * 2, y: myYOffset * 27.5 },
+    position: { x: mycenter + myXOffset * 2, y: myYOffset * 26.5 },
     title: "HTML/CSS",
-    text: "Although i dabbled into HTML and CSS already in the past, i feel like i am now finally using it's full potential.",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F20.jpg?alt=media&token=0b642243-104b-41c9-9193-a7772058e6fa",
+    text: "I occasionally used HTML and CSS in the past. Now i am able to combine it with Javascript and use it to it's full potential.",
+    imgLink: require("./img/20.jpg"),
   },
   {
     id: "21",
@@ -215,13 +236,12 @@ const nodes = [
     className: "loading",
     type: "output",
     data: { label: "React (+Native)", key: "node22" },
-    position: { x: mycenter + myXOffset * 2, y: myYOffset * 29 },
+    position: { x: mycenter + myXOffset * 2, y: myYOffset * 28 },
     title: "REACT / REACT NATIVE",
     text: "I'm lucky to have great friends that can teach me about react! It's so convenient and fun to design reusable components and beautiful web apps!",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/Skilltree%2F21.jpg?alt=media&token=a1ecb00f-ff5f-4323-afb6-76453e6d94b2",
+    imgLink: require("./img/21.jpg"),
   },
-
+  /*
   {
     id: "22",
     key: "node22",
@@ -230,16 +250,20 @@ const nodes = [
     position: { x: mycenter - myXOffset * 0, y: myYOffset * 19.9 },
     title: "WEB XR",
     text: "My ultimate goal at the moment is to create a WebXR app and make AR & VR apps more accessible for everyone through their browser!",
-  },
+  },*/
   {
     id: "23",
     key: "node23",
     type: "output",
     data: { label: "GitHub", key: "node24" },
-    position: { x: mycenter + myXOffset * 4, y: myYOffset * 26.3 },
+    position: { x: mycenter + myXOffset * 4, y: myYOffset * 25 },
     title: "GITHUB",
-    text: "Livesafer and a coders best friend! I learned to love GitHub .. the hard way.",
+    text: "I learned to love GitHub .. the hard way. Source control is super important no matter how big the project is.",
+    imgLink: require("./img/23.jpg"),
+    link: "https://github.com/Inesseni",
+    linktext: "My GitHub",
   },
+  /*
   {
     id: "24",
     key: "node24",
@@ -248,7 +272,7 @@ const nodes = [
     position: { x: mycenter + myXOffset * 5.5, y: myYOffset * 25 },
     title: "FIGMA",
     text: "Part of my Front-End-Journey is to find tools that make my life easier. Figma falls into that category, i love how easy it is to set up a prototype and get an idea across!",
-  },
+  },*/
 
   ///////////left path
   {
@@ -257,9 +281,8 @@ const nodes = [
     data: { label: "photography", key: "node26" },
     position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 9 },
     title: "PHOTOGRAPHY",
-    text: "Taking photos has been a way to document the world and myself, and was always a big part of my creative experiments.",
-    imgLink:
-      "https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/774330_565551576806689_1249498654_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=01JqgNV5rEIAX-Zy4Fz&_nc_ht=scontent-ham3-1.xx&oh=00_AfADTw669r6cPLglFJ9QOgr8q2WhKP8XYG-hBNU1vBm7Ag&oe=6410A175",
+    text: "Taking photos has been a way to document the world and myself, and was a big part of my creative experiments and expressions during my teenage years.",
+    imgLink: require("./img/25.jpg"),
   },
   {
     id: "26",
@@ -267,7 +290,9 @@ const nodes = [
     data: { label: "video", key: "node27" },
     position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 12 },
     title: "VIDEO",
-    text: "What a better way to document stuff with 24 photos per second? I love making tiny video clips about every project to share on social media.",
+    text: "In the age of social media i mostly use video to document my projects and post about my progress online.",
+    link: "https://www.instagram.com/inidewin_/",
+    linktext: "My Instagram account",
   },
   {
     id: "27",
@@ -275,10 +300,8 @@ const nodes = [
     data: { label: "Photoshop", key: "node28" },
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 10.7 },
     title: "PHOTOSHOP",
-    text: "Started to edit my photos, created (very cool) collages and experimented with all the functionality Adobe has to offer.",
-    imgLink:
-      "https://scontent-ham3-1.xx.fbcdn.net/v/t1.18169-9/1902952_814418188586692_845048319_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=quIKdIL6vygAX8BS6_8&_nc_ht=scontent-ham3-1.xx&oh=00_AfA4_FpAV9CapnPXZJILECUfICZ3HkQglgON5RqYc2pSzQ&oe=6410A8B4",
-    //https://scontent-ham3-1.xx.fbcdn.net/v/t31.18172-8/13483062_1329413753753797_3860708358604064989_o.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=5iwUcMIorsUAX_N5SoW&_nc_ht=scontent-ham3-1.xx&oh=00_AfDXsf0JSVa-E6MammvA3kD-WgPNP2ssEY3VBlUOTnztEw&oe=64109D59
+    text: "Photoshop was one of the first tools i used to alter my photos and create digital art. Today i mostly use it to create and edit 2D assets for my projects.",
+    imgLink: require("./img/27b.jpg"),
   },
   {
     id: "28",
@@ -287,7 +310,7 @@ const nodes = [
     position: { x: mycenter, y: myYOffset * 12.7 },
     title: "TEXTURING",
     text: "My Photoshop and drawing skills come in handy when i need to create textures for 3D Models!",
-    imgLink: require("./img/28.jpg")
+    imgLink: require("./img/28.jpg"),
   },
   {
     id: "29",
@@ -296,8 +319,8 @@ const nodes = [
     data: { label: "2D Animation", key: "node30" },
     position: { x: mycenter - myXOffset * 2, y: myYOffset * 14 },
     title: "2D ANIMATION",
-    text: "Little stop motion clips turned into gifs turned into frame-by-frame animations. To this day i love drawing animations by hand, but also use tools like spine.",
-    imgLink: require("./img/29.jpg")
+    text: "Little stop motion clips turned into gifs turned into frame-by-frame animations. To this day i love drawing animations by hand.",
+    imgLink: require("./img/29.jpg"),
   },
   {
     id: "30",
@@ -305,7 +328,10 @@ const nodes = [
     data: { label: "Youtube", key: "node31" },
     position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 15.5 },
     title: "YOUTUBE",
-    text: "2022 i started to upload videos of my projects more often to youtube, until i finally started doing tutorials on social AR! Planning to do more topics and tools soon.",
+    text: "In 2022 i uploaded videos of my projects more often, until i eventually started recording myself doing tutorials and talking about AR. ",
+    imgLink: require("./img/30.jpg"),
+    link: "https://www.youtube.com/@ineshilz/featured",
+    linktext: "My YouTube channel",
   },
   {
     id: "31",
@@ -313,7 +339,8 @@ const nodes = [
     data: { label: "Premiere / After effects", key: "node32" },
     position: { x: mycenter - myXOffset * 7, y: myYOffset * 14 },
     title: "PREMIERE / AFTER EFFECTS",
-    text: "I can't edit my videos on my phone forever.. i already learned a thing or two about this great tools during university which helps a whol lot!",
+    text: "While i first edited all of my videos on the phone, i eventually switched to Premiere Pro and After Effects to level up my editing skills.",
+    imgLink: require("./img/31.png"),
   },
 
   {
@@ -324,9 +351,10 @@ const nodes = [
     data: { label: "teaching", key: "node33" },
     position: { x: mycenter - myXOffset * 4.5, y: myYOffset * 19 },
     title: "TEACHING",
-    text: "It is so rewarding to see that my tutorials are helpful to people! I really like sharing my knowledge and want to lean more into teaching this year.",
-    imgLink:
-      "https://firebasestorage.googleapis.com/v0/b/storybook-api-383ce.appspot.com/o/storyPics%2Fmithorns.png?alt=media&token=0c5f8450-0af0-42ab-9425-33592960537e",
+    text: "Watching YouTube tutorials myself for years, i decided to give it a try and share some of my knowledge. It's been super nice to see that it is helpful to people!.",
+    imgLink: require("./img/32.png"),
+    link: "https://www.youtube.com/playlist?list=PLQ4NDgEDy3Uku7KOwBORu-EuF7rtKAhVS",
+    linktext: "AR tutorials playlist",
   },
   {
     id: "33",
@@ -336,7 +364,8 @@ const nodes = [
     data: { label: "video editing", key: "node34" },
     position: { x: mycenter - myXOffset * 7, y: myYOffset * 17.5 },
     title: "VIDEO EDITING",
-    text: "I'm trying to improve my video quality with every new video. Engaging and fun editing that keeps people hooked is something i want to get better at!",
+    text: "I try to improve my video quality with every new video. Engaging and fun editing that keeps people hooked is something i want to get better at!",
+    imgLink: require("./img/33.jpg"),
   },
 ];
 
