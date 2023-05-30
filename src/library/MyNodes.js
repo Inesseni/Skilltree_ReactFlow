@@ -1,10 +1,10 @@
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
 const myWidth = window.innerWidth;
-const mycenter = myWidth / 2 - 40;
+const mycenter = myWidth / 2 - 30;
 
-const myXOffset = clamp(window.innerWidth / 20, 25, 35);
-const myYOffset = clamp(window.innerWidth / 0.2, 50, 70);
+const myXOffset = clamp(window.innerWidth / 20, 22, 35);
+const myYOffset = clamp(window.innerWidth / 0.2, 40, 60);
 
 const nodes = [
   {
