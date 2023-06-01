@@ -8,14 +8,14 @@ const MySlideUp = styled.div`
   position: fixed;
   bottom: 0;
   margin-bottom: -700px;
-  border-radius: 40px;
+  border-radius: 20px;
   z-index: 3;
   transition-propertiy: margin-bottom;
   transition-duration: 0.5s;
 `;
 
 const MyTitle = styled.p`
-  flex: 1;
+  flex: 9;
   text-align: center;
   font-size: 15px;
   font-weight: 600;
@@ -55,6 +55,16 @@ const MyImgContainer = styled.div`
   height: auto;
 `;
 
+const IterateButton = styled.div`
+  flex: 1;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+  margin: 0;
+  padding: 15px 20px;
+`;
+
 export default function SlideUp({
   myMargin,
   onclick,
@@ -63,16 +73,32 @@ export default function SlideUp({
   link,
   linktext,
   image,
+  onRightClick,
+  onLeftClick,
 }) {
   return (
-    <MySlideUp style={{ marginBottom: myMargin }} onClick={onclick}>
-      <MyTitle>{title}</MyTitle>
-      <MyText>{description}</MyText>
-      {link !== undefined ? (
-        <MyLink target="_blank" href={link}>
-          {linktext}
-        </MyLink>
-      ) : null}
+    <MySlideUp style={{ marginBottom: myMargin }}>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <IterateButton onClick={onLeftClick}>{"<"}</IterateButton>
+        <MyTitle onClick={onclick}>{title}</MyTitle>
+        <IterateButton onClick={onRightClick}>{">"}</IterateButton>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <div>
+          <MyText>{description}</MyText>
+          {link !== undefined ? (
+            <MyLink target="_blank" href={link}>
+              {linktext}
+            </MyLink>
+          ) : null}
+        </div>
+      </div>
       <MyImgContainer>
         <img style={{ width: "100%" }} src={image} alt="" />
       </MyImgContainer>

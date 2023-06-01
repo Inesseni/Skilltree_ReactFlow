@@ -24,7 +24,7 @@ import SlideUp from "./components/SlideUp";
 import { isMobile } from "react-device-detect";
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
-var fontSizeH1 = clamp(window.innerWidth / 10, 40, 600);
+var fontSizeH1 = clamp(window.innerWidth / 10, 60, 600);
 var sthSelected = false;
 var slideShown = false;
 
@@ -81,15 +81,10 @@ function App() {
   const exit = (event, node) => {
     setHoveredNode(undefined);
   };
+
   useEffect(() => {
     //console.log("changed");
-    if (slideShown) {
-      setSlideMargin(
-        selectedOrHoveredNode !== undefined
-          ? selectedOrHoveredNode.margin
-          : null
-      );
-    }
+    setSlideMargin(selectedOrHoveredNode !== undefined ? -100 : null);
   }, [selected]);
 
   const selectedOrHoveredNode = MyNodes.find(
@@ -150,16 +145,6 @@ function App() {
           onNodeMouseLeave={exit}
           onNodeClick={(_, node) => {
             setSelected(node.id === selected ? undefined : node.id);
-
-            if (node.id !== selected && sthSelected === false) {
-              setSlideMargin(-650);
-              //console.log("selected");
-              sthSelected = true;
-            } else if (node.id === selected) {
-              setSlideMargin(-700);
-              //console.log("un-selected");
-              sthSelected = false;
-            }
           }}
         />
       </TreeWrapper>
@@ -167,15 +152,20 @@ function App() {
         <>
           {selectedOrHoveredNode !== undefined ? (
             <SlideUp
+              nodes={MyNodes.map((n) =>
+                n.id === selected ? { ...n, selected: true } : n
+              )}
               myMargin={slideMargin}
               onclick={() => {
-                if (slideShown) {
-                  slideShown = false;
-                  setSlideMargin(-650);
-                } else {
-                  slideShown = true;
-                  setSlideMargin(selectedOrHoveredNode.margin);
-                }
+                setSlideMargin(-700);
+              }}
+              onRightClick={() => {
+                const nextIndex = selectedOrHoveredNode.next;
+                setSelected(MyNodes[nextIndex].id);
+              }}
+              onLeftClick={(_, node) => {
+                const nextIndex = selectedOrHoveredNode.prev;
+                setSelected(MyNodes[nextIndex].id);
               }}
               title={selectedOrHoveredNode.title}
               description={selectedOrHoveredNode.text}

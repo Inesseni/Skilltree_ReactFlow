@@ -22,7 +22,7 @@ export const TreeWrapper = styled.div`
   pointer-events: none;
   margin-top: 300px;
   overflow: hidden;
-  height: 2800px;
+  height: 2500px;
   width: 100%;
 `;
 
@@ -46,7 +46,6 @@ export const MyH2 = styled.h2`
 `;
 
 export const DescriptionWrapper = styled.div`
-
   position: fixed;
   top: ${(props) => (props.mobile ? "200px" : "400px")};
   right: 0;
@@ -62,7 +61,6 @@ export const MyText = styled.p`
   font-size: 20px;
   color: white;
 `;
-
 
 export const Image = styled.img`
   position: fixed;
