@@ -5,4 +5,4 @@ Optimized for Dektop and mobile!
 [Check it out here!](https://kaleidoscopic-arithmetic-3b682b.netlify.app/)
 
 
-![skilltttt](https://github.com/Inesseni/Skilltree_ReactFlow/assets/60435099/3bd93708-dcd2-434e-85ca-e2f9e777f473)
+![InesHilz_skilltree](https://github.com/Inesseni/Skilltree_ReactFlow/assets/60435099/aaa5d8b1-a69b-4ad5-9947-38329c4551cc)
