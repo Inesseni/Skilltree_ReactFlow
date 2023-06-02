@@ -1,27 +1,8 @@
-*,
-.react-flow__input,
-.react-flow__output,
-.react-flow__edge {
-  cursor: default;
-}
-
-.react-flow__edge-path,
-.react-flow__connection-path {
+.react-flow__edge,
+.react-flow__edge-path {
+  pointer-events: none;
   stroke-width: 2;
   stroke: rgb(255, 255, 255);
-}
-.react-flow__edge {
-  pointer-events: none;
-}
-.react-flow__edge-path.selected,
-.react-flow__connection-path.selected {
-  stroke-width: 2;
-  stroke: rgba(255, 255, 255, 1);
-}
-
-.react-flow__pane {
-  overflow: hidden;
-  min-height: 100vh;
 }
 
 .react-flow__node {
@@ -36,13 +17,14 @@
   border-radius: 20px;
   transition: all 0.2s ease-in-out;
   box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0.2);
+  cursor: pointer;
 }
 
 .react-flow__node.selected {
   background-color: white;
   border: 0px solid black;
   color: rgba(85, 85, 85, 1);
-  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 255, 0);
 }
 
 .react-flow__node.loading {
@@ -71,13 +53,11 @@
   width: 120px;
   font-size: medium;
   opacity: 1;
-  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0.2);
 }
 
 .react-flow__node.first:hover {
   background-color: white;
   color: rgba(85, 85, 85, 1);
-  box-shadow: 8px 5px 2px 1px rgba(0, 0, 255, 0);
 }
 
 @keyframes animate-stripes {
@@ -91,7 +71,6 @@
 }
 
 .react-flow__node:hover {
-  transform: scale(3);
   background: rgb(255, 255, 255);
   color: rgb(49, 49, 49);
 }
