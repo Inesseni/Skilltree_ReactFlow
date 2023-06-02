@@ -90,7 +90,7 @@ const nodes = [
     data: { label: "university", key: "node6" },
     position: { x: mycenter, y: myYOffset * 5 },
     title: "UNIVERSITY",
-    text: "Following my passion for art and design, i studies Multimedia|VR-Design. I was fascinated by immersive media and wanted to teleport people into a different world!",
+    text: "Following my passion for art and design, i studied Multimedia|VR-Design. I was fascinated by immersive media and wanted to teleport people into a different world!",
     imgLink: require("./img/6.jpg"),
     link: "https://ineshilz.myportfolio.com/university-projects-in-unity",
     linktext: "University Projects",
