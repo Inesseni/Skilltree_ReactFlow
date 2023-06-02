@@ -126,7 +126,7 @@ function App() {
             }}
             opacity={1}
             src={selectedOrHoveredNode.imgLink}
-            alt="Image that correlates to the text written"
+            alt=""
           />
           <DescriptionWrapper>
             <MyTitle>{selectedOrHoveredNode.title}</MyTitle>
