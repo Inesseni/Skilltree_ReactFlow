@@ -121,8 +121,8 @@ function App() {
           {/* This image follows the cursor position */}
           <Image
             style={{
-              top: y - 100,
-              left: x - 300,
+              top: y,
+              left: x,
             }}
             opacity={1}
             src={selectedOrHoveredNode.imgLink}
