@@ -78,6 +78,21 @@ export default function SlideUp({
 }) {
   return (
     <MySlideUp style={{ marginBottom: myMargin }}>
+      <div
+        style={{
+          position: "absolute",
+          right: 0,
+          top: -40,
+          textAlign: "right",
+          marginRight: "14px",
+          backgroundColor: "white",
+          padding: "5px 15px 8px 15px",
+          borderRadius: 20,
+        }}
+        onClick={onclick}
+      >
+        x
+      </div>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <IterateButton onClick={onLeftClick}>{"<"}</IterateButton>
         <MyTitle onClick={onclick}>{title}</MyTitle>

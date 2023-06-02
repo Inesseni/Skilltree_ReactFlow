@@ -25,8 +25,7 @@ import { isMobile } from "react-device-detect";
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 var fontSizeH1 = clamp(window.innerWidth / 10, 60, 600);
-var sthSelected = false;
-var slideShown = false;
+var slideUpMarge = -200;
 
 function recursiveAnimateTitle(string) {
   let firstLetter = string[0];
@@ -83,8 +82,18 @@ function App() {
   };
 
   useEffect(() => {
-    //console.log("changed");
-    setSlideMargin(selectedOrHoveredNode !== undefined ? -100 : null);
+    if (selectedOrHoveredNode !== undefined) {
+      setSlideMargin(slideUpMarge);
+      window.scroll({
+        top: isMobile
+          ? selectedOrHoveredNode.position.y + 220
+          : selectedOrHoveredNode.position.y - 100,
+        left: 0,
+        behavior: "smooth",
+      });
+    } else {
+      setSlideMargin(null);
+    }
   }, [selected]);
 
   const selectedOrHoveredNode = MyNodes.find(
@@ -145,6 +154,7 @@ function App() {
           onNodeMouseLeave={exit}
           onNodeClick={(_, node) => {
             setSelected(node.id === selected ? undefined : node.id);
+            console.log(selectedOrHoveredNode.position.y);
           }}
         />
       </TreeWrapper>
@@ -157,7 +167,7 @@ function App() {
               )}
               myMargin={slideMargin}
               onclick={() => {
-                setSlideMargin(-700);
+                setSlideMargin(-740);
               }}
               onRightClick={() => {
                 const nextIndex = selectedOrHoveredNode.next;
